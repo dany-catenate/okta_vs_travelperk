@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="InvoiceVar" type="{http://ch/txg/travelperk/Get_Invoice}GetInvoiceVar_Output" initialValueMode="none"/>
+    <moduleSharedVariable name="CostCentersVar" type="{http://ch/txg/travelperk/GetCostCentersList}GetCostCentersVar_Output" initialValueMode="none"/>
+    <moduleSharedVariable name="InvoicesListVar" type="{http://ch/txg/travelperk/Get_Invoices}GetInvoicesListVar_Output" initialValueMode="none"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/travelperk/Get_Invoice" location="../Schemas/Get_Invoice.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/travelperk/GetCostCentersList" location="../Schemas/GetCostCentersList.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/travelperk/Get_Invoices" location="../Schemas/Get_Invoices.xsd"/>
+</msv:DocumentRoot>

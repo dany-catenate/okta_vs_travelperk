@@ -1,0 +1,9 @@
+ErrorCode;ErrorMessage;ErrorType;CreateCase;CircuitBreaker;HTTPStatusCode;APIname;BSLProcess
+HCM000001;Authentication Error invoking Okta;System;false;false;500;;getAccessToken
+HCM000002;Technical Error invoking Okta;System;false;false;500;;getAccessToken
+HCM000003;Validation Error invoking Okta;Business;false;false;500;;getAccessToken
+HCM000004;Authentication Error invoking Okta;System;false;false;500;;listGroupMembers
+HCM000005;Technical Error invoking Okta;System;false;false;500;;listGroupMembers
+HCM000006;Validation Error invoking Okta;Business;false;false;500;;listGroupMembers
+HCM000007;Generic Error;System;false;false;500;;
+HCM000008;Failed to retrieve employees;System;false;false;500;;getEmployees

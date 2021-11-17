@@ -1,0 +1,30 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ch Txg Hcm Okta Sl Sh Module
+Bundle-SymbolicName: ch.txg.hcm.okta.sl.sh
+Bundle-Version: 1.2.1.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+Require-Bundle: ch.txg.core.customfunctions.common.sh;bundle-version="1.2.3",
+ ch.txg.core.customfunctions.common.externallibs.pl;bundle-version="1.0.0"
+TIBCO-BW-Edition: bwcloud
+Provide-Capability: com.tibco.bw.module; name="ch.txg.hcm.okta.sl.sh"; version:Version="1.2.1",
+ com.tibco.bw.schemas; ns="http://ch/txg/hcm/okta/ErrorHelper",
+ com.tibco.bw.schemas; ns="http://ch/txg/hcm/okta/ListGroupMembers",
+ com.tibco.bw.schemas; ns="http://ch/txg/hcm/okta/getAccessToken",
+ com.tibco.bw.schemas; ns="http://tns.tibco.com/bw/json/1622113472004",
+ com.tibco.bw.resources; name="ch.txg.hcm.okta.sl.sh.http",
+ com.tibco.bw.processes; name="ch.txg.hcm.okta.sl.sh.auth",
+ com.tibco.bw.processes; name="ch.txg.hcm.okta.sl.sh.group"
+TIBCO-BW-Version: 2.6.0 V39 2020-12-07
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.core.customfunctions.common.sh)(version=1.2.3))",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.core.lehf.common.sh)(version=1.1.15))",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.common.travelperk.sh)(version=1.0.1))",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.restjson)",
+ com.tibco.bw.palette; filter:="(name=bw.http)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.httpclient)"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv

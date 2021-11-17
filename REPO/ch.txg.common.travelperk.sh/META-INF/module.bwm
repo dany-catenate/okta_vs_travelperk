@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_nkgsEBE9EeyheNGKjEG1aQ" targetNamespace="http://tns.tibco.com/bw/composite/ch.txg.common.travelperk.sh" name="ch.txg.common.travelperk.sh" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_oXDjUBE9EeyheNGKjEG1aQ" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oXfoMBE9EeyheNGKjEG1aQ" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oXjSkBE9EeyheNGKjEG1aQ" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oXlu0BE9EeyheNGKjEG1aQ" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oXoyIBE9EeyheNGKjEG1aQ" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_oXscgBE9EeyheNGKjEG1aQ" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_BhMo0BFEEeyheNGKjEG1aQ" name="/Connections/Http/Invoices/Uri" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_WqCq0BFEEeyheNGKjEG1aQ" name="/Connections/Http/Invoices/status" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_YwUeABFIEeyheNGKjEG1aQ" name="/Connections/Http/Invoices/InvoicesTTL_sec" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_vDe-EBFIEeyheNGKjEG1aQ" name="/Connections/Http/Invoices/maxRetry" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_6R9BoBFIEeyheNGKjEG1aQ" name="/Connections/Http/Invoices/baseRetryDelay_s" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_-NN8QBIXEeySmJXNq44QrQ" name="/Connections/Http/Invoices/offset" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_I-tI4BIYEeySmJXNq44QrQ" name="/Connections/Http/Invoices/limit" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_9PxhwBIFEeywNLzqeKzbhg" name="/Connections/Http/Client/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_-dB_EBIFEeywNLzqeKzbhg" name="/Connections/Http/Client/Authorization" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="__trHkBIFEeywNLzqeKzbhg" name="/Connections/Http/Client/ApiVersion" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_xE0HUBIyEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/Uri" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3OrBgBIyEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/status" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3T3DgBIyEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/CostCentersTTL_sec" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_3Y5UgBIyEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/maxRetry" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_9Ai5gBIyEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/baseRetryDelay_s" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_9CYFgBIyEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/offset" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_OSm3MBIzEeyY6JG44uohDQ" name="/Connections/Http/CostCenters/limit" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_4yA00BI4EeyY6JG44uohDQ" name="/Connections/Http/Invoice/Uri" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_bsUVcCA4Eeyz-LFEY1DOkQ" name="/Connections/Http/Invoice/ClassName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_eHsywCA4Eeyz-LFEY1DOkQ" name="/Connections/Http/Invoice/libraryName" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2IpqUCA4Eeyz-LFEY1DOkQ" name="/Connections/Http/Invoice/dateFormat" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_x-TDUBJOEeyXAr2KV-Qezg" name="/Connections/Http/Token_Params/client_id" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2Yhy8BJOEeyXAr2KV-Qezg" name="/Connections/Http/Token_Params/grant_type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2d4NABJOEeyXAr2KV-Qezg" name="/Connections/Http/Token_Params/password" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2eROkBJOEeyXAr2KV-Qezg" name="/Connections/Http/Token_Params/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_2mA1UBJOEeyXAr2KV-Qezg" name="/Connections/Http/Token_Params/client_secret" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_egbDcBJQEeyXAr2KV-Qezg" name="/Connections/Http/Token_Params/RequestUri/URI" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_0P8V0BJOEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/DISABLE_CONNECTION_POOLING" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_EiTKABJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/PORT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_EmDooBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/MAX_TOTAL_CONNECTION_PER_HOST" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_EmXKoBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/LOG_REQ_RESP_TIME" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Uy640BJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/RETRY_COUNT" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_U1-M0BJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/CONFIDENTIALITY" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_U3kvUBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/HOST" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_U5tdUBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/MAX_TOTAL_CONNECTIONS" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_U7_8UBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/STALE_CHECK" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gQa24BJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/USE_NONPREEMPTIVE_AUTH" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gRyI0BJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/CONNECTION_TIMEOUT_ms" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gUrr0BJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/SOCKET_TIMEOUT_ms" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gXa2wBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/ACCEPT_REDIRECT" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_gaZ5UBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/USE_SINGLE_COOKIE_HEADER" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tEQVwBJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/IDLE_CONNECTION_TIMEOUT_ms" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_tFVT0BJPEeyXAr2KV-Qezg" name="/Connections/Http/ClientToken/DEFAULT_CONFIDENTIALITY" type="XMLSchema:boolean" scaext:simpleValue="false" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_Si7ggDF6Eey17Mtw_g4HFw" name="/Connections/Http/Users/Uri" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dlhEMDF6Eey17Mtw_g4HFw" name="/Connections/Http/Users/limit" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_dnsOcDF6Eey17Mtw_g4HFw" name="/Connections/Http/Users/offset" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_GuwDoDGBEey17Mtw_g4HFw" name="/Connections/Http/Users/Host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+</sca:composite>

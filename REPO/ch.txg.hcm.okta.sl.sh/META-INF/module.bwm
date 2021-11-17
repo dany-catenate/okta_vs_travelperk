@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_8wPKsGuAEeubyP_jKy8F8Q" targetNamespace="http://tns.tibco.com/bw/composite/ch.txg.hcm.okta.sl.sh" name="ch.txg.hcm.okta.sl.sh" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:property xmi:id="_8zer8GuAEeubyP_jKy8F8Q" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_8zjkcGuAEeubyP_jKy8F8Q" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_8zlZoGuAEeubyP_jKy8F8Q" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_8zn14GuAEeubyP_jKy8F8Q" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_8zqSIGuAEeubyP_jKy8F8Q" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_8ztVcGuAEeubyP_jKy8F8Q" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_nU_0UGuEEeubyP_jKy8F8Q" name="/ch.txg.hcm.okta.sl.sh/Connection/Http/OktaDomain/host" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_pqYXUGuEEeubyP_jKy8F8Q" name="/ch.txg.hcm.okta.sl.sh/Connection/Http/OktaDomain/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_CMvS0GuFEeubyP_jKy8F8Q" name="/ch.txg.hcm.okta.sl.sh/Api/Token/oauthUrl" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_JJtMgGunEeuwU6NHboZnaw" name="/ch.txg.hcm.okta.sl.sh/Api/Token/maxRetry" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_OhyEcGunEeuwU6NHboZnaw" name="/ch.txg.hcm.okta.sl.sh/Api/Token/skipRetryErrorCodesList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_NFpBIGuoEeuwU6NHboZnaw" name="/ch.txg.hcm.okta.sl.sh/Api/Token/baseRetryDelay_sec" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_LFpNMGuFEeubyP_jKy8F8Q" name="/ch.txg.hcm.okta.sl.sh/Api/Groups/listGroupMembers_Users" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_iJmjIGuoEeuwU6NHboZnaw" name="/ch.txg.hcm.okta.sl.sh/Api/Groups/maxRetry" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_iOK6EGuoEeuwU6NHboZnaw" name="/ch.txg.hcm.okta.sl.sh/Api/Groups/skipRetryErrorCodesList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_iSOToGuoEeuwU6NHboZnaw" name="/ch.txg.hcm.okta.sl.sh/Api/Groups/baseRetryDelay_sec" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_e1gqsL4yEeuyHJ_v8orEAg" name="/ch.txg.hcm.okta.sl.sh/Api/MembersFull/listGroupMembers_UsersFull" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_kzVUAL4yEeuyHJ_v8orEAg" name="/ch.txg.hcm.okta.sl.sh/Api/MembersFull/maxRetry" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_laCHoL4yEeuyHJ_v8orEAg" name="/ch.txg.hcm.okta.sl.sh/Api/MembersFull/skipRetryErrorCodesList" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_lectkL4yEeuyHJ_v8orEAg" name="/ch.txg.hcm.okta.sl.sh/Api/MembersFull/baseRetryDelay_sec" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+</sca:composite>

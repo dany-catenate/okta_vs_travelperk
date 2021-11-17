@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Ch Txg Travel SyncUsers Md Module
+Bundle-SymbolicName: ch.txg.travel.syncUsers.md
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: TIBCO Software Inc.
+Require-Bundle: ch.txg.core.customfunctions.common.sh;bundle-version="1.2.3",ch.txg.core.customfunctions.common.externallibs.pl;bundle-version="1.0.0"
+TIBCO-BW-Edition: bwcloud
+TIBCO-BW-Version: 2.6.1 V57 2021-02-13
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.core.lehf.common.sh)(version=1.1.15))",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.hcm.okta.sl.sh)(version=1.2.1))",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.common.travelperk.sh)(version=1.0.1))",
+ com.tibco.bw.module; filter:="(&(name=ch.txg.core.customfunctions.common.sh)(version=1.2.3))",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.palette; filter:="(name=bw.file)",
+ com.tibco.bw.palette; filter:="(name=bw.restjson)"
+TIBCO-BW-ApplicationModule: META-INF/module.bwm
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://ch/txg/hcm/okta/ErrorHelper" 
+xmlns:tns="http://ch/txg/hcm/okta/ErrorHelper" 
+elementFormDefault="qualified">
+<complexType name="httpErrorType">
+		<sequence>
+			<element name="httpErrorCode" type="string" minOccurs="0" default="500"/>
+            <element name="httpErrorMessage" type="string" minOccurs="0" />
+            <element name="httpAsciiContent" type="string" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<element name="httpError" type="tns:httpErrorType" />
+
+</schema>

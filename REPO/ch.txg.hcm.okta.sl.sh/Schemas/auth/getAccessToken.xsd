@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ch/txg/hcm/okta/getAccessToken"
+	xmlns:tns="http://ch/txg/hcm/okta/getAccessToken" elementFormDefault="qualified">
+
+	<complexType name="getAccessTokenInputType">
+		<sequence>
+			<element name="accessToken">
+				<complexType>
+					<sequence>
+						<sequence>
+							<element name="grant_type" type="string" minOccurs="1" />
+							<element name="scope" type="string" minOccurs="1" />
+							<element name="client_assertion_type" type="string" minOccurs="1" />
+						</sequence>
+					</sequence>
+				</complexType>
+			</element>
+			<element name="jwt">
+				<complexType>
+					<sequence>
+						<sequence>
+							<element name="payload">
+								<complexType>
+									<sequence>
+										<sequence>
+											<element name="aud" type="string" />
+											<element name="iss" type="string" />
+											<element name="sub" type="string" />
+										</sequence>
+									</sequence>
+								</complexType>
+							</element>
+							<element name="privateKeyString" type="string" />
+						</sequence>
+					</sequence>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+
+	<element name="getAccessTokenInput" type="tns:getAccessTokenInputType" />
+
+	<complexType name="getAccessTokenOutputType">
+		<sequence>
+			<element name="token_type" type="string" minOccurs="0"
+				nillable="true" />
+			<element name="expires_in" type="integer" minOccurs="0"
+				nillable="true" />
+			<element name="access_token" type="string" minOccurs="0"
+				nillable="true" />
+			<element name="scope" type="string" minOccurs="0" nillable="true" />
+		</sequence>
+	</complexType>
+
+	<element name="getAccessTokenOutput" type="tns:getAccessTokenOutputType" />
+
+</schema>

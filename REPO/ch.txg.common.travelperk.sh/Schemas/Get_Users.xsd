@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ch/txg/travelperk/Get_Invoices" elementFormDefault="qualified" targetNamespace="http://ch/txg/travelperk/Get_Invoices">
+  
+  <element name="Get_Users_Input" type="tns:GetUsersList_InputType"></element>
+
+<complexType name="GetUsersList_InputType">
+    <sequence>
+    <element maxOccurs="1" minOccurs="0"    name="sourceSystem" type="string"/>      
+     <element maxOccurs="1" minOccurs="0"    name="userId" type="string"/>   
+      <element maxOccurs="1" minOccurs="0" name="Authorization" type="string"/>
+      <element maxOccurs="1" minOccurs="0" name="API-Version" type="string"/>
+     </sequence>     
+   </complexType>
+  
+  
+  
+  
+  
+  
+  
+  <complexType name="Get_UsersElementType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="users">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="id" type="string"/>
+            <element maxOccurs="1" minOccurs="0" name="user_name" type="string"/>
+            <element maxOccurs="1" minOccurs="0" name="name">
+              <complexType>
+                <sequence>
+                  <element maxOccurs="1" minOccurs="0" name="last_name" type="string"/>
+                  <element maxOccurs="1" minOccurs="0" name="first_name" type="string"/>
+                  <element maxOccurs="1" minOccurs="0" name="middle_name" type="string"/>
+                  <element maxOccurs="1" minOccurs="0" name="title" type="string"/>
+                </sequence>
+              </complexType>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="preferred_language" type="string"/>
+            <element maxOccurs="1" minOccurs="0" name="locale" type="string"/>
+            <element maxOccurs="1" minOccurs="0" name="active" type="boolean"/>
+            <element maxOccurs="1" nillable="true" minOccurs="0" name="job_title" type="string"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="phone_numbers" type="string"/>
+            <element maxOccurs="1" nillable="true" minOccurs="0" name="emergency_contact" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element maxOccurs="1" minOccurs="0" name="limit" type="integer"/>
+      <element maxOccurs="1" minOccurs="0" name="offset" type="integer"/>
+      <element maxOccurs="1" minOccurs="0" name="total" type="integer"/>
+    </sequence>
+  </complexType>
+  <element name="Get_Users_Output" type="tns:Get_UsersElementType"/>
+</schema>
