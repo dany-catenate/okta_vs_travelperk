@@ -393,7 +393,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    width="220"
+                                    width="230"
                                     x="48"
                                     xsi:type="notation:Bounds" y="172"/>
                                     </children>
@@ -994,7 +994,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    width="232"
+                                    width="249"
                                     x="-7"
                                     xsi:type="notation:Bounds" y="183"/>
                                     </children>
@@ -1603,7 +1603,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
             <bendpoints
-                points="[4, 25, -165, -39]$[4, 88, -165, 24]$[145, 88, -24, 24]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-6, 25, -170, -70]$[-6, 104, -170, 9]$[140, 104, -24, 9]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
@@ -1741,14 +1741,6 @@
         <bpws:variable element="ns:OptionalErrorReport"
             name="_errorOptional" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:logid"
-            name="Check_firstName_and_lastName-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:logid"
-            name="Check_firstName_and_lastName" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="Log1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="Log2-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="Log3-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="Log4-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns8:logid"
             name="Check_firstName_and_lastNameTP-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:logid"
             name="Check_firstName_and_lastNameTP" sca-bpel:internal="true"/>
@@ -1756,6 +1748,18 @@
         <bpws:variable element="ns5:ActivityInput" name="TP_Log2-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:ActivityInput" name="TP_Log3-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:ActivityInput" name="TP_Log4-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:logid"
+            name="Check_firstName_and_lastNameOKTA-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:logid"
+            name="Check_firstName_and_lastNameOKTA" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput"
+            name="OKTA_Log1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput"
+            name="OKTA_Log2-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput"
+            name="OKTA_Log3-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput"
+            name="OKTA_Log4-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1839,8 +1843,7 @@
                         variableName="//ch.txg.core.lehf.common.sh//loggerParams" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="ForEach" tibex:group="foreach"
-                tibex:indexToGlobal="false" tibex:xpdlId="b2213215-224c-4b11-9535-1797872ad0b1">
+            <bpws:scope name="ForEach" tibex:group="foreach" tibex:xpdlId="b2213215-224c-4b11-9535-1797872ad0b1">
                 <bpws:targets>
                     <bpws:target linkName="GetUsersListToForEach_TRAVELPERKvsOKTA"/>
                 </bpws:targets>
@@ -1886,9 +1889,9 @@
                                     tibex:group="groupEnd" tibex:xpdlId="ec8e796b-932f-4c74-9d5b-0e43f7b714b7"/>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Check_firstName_and_lastName-input"
-                                    name="Check_firstName_and_lastName"
-                                    outputVariable="Check_firstName_and_lastName"
+                                    inputVariable="Check_firstName_and_lastNameTP-input"
+                                    name="Check_firstName_and_lastNameTP"
+                                    outputVariable="Check_firstName_and_lastNameTP"
                                     tibex:xpdlId="a796ba82-f45c-4997-b0f9-b8b0be38d372" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStartToMapper"/>
@@ -1905,10 +1908,10 @@
                                     <bpws:source linkName="MapperToLog1_samefullName">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
 
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     </bpws:sources>
                                     <tibex:inputBindings>
@@ -1935,7 +1938,7 @@
                                     </tibex:config>
                                     </tibex:activityExtension>
                                 </bpws:extensionActivity>
-                                <bpws:empty name="Empty" tibex:xpdlId="b7b88575-b929-47d1-bb9e-ba2d2355661f">
+                                <bpws:empty name="CheckTP" tibex:xpdlId="b7b88575-b929-47d1-bb9e-ba2d2355661f">
                                     <bpws:targets>
                                     <bpws:target linkName="MapperToEmpty"/>
                                     </bpws:targets>
@@ -1943,37 +1946,37 @@
                                     <bpws:source linkName="EmptyToLog1_DifferentlastName">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = &quot;Only firstName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Only firstName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = "Only firstName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Only firstName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="EmptyToLog2_DifferentfirstName">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = &quot;Only lastName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Only lastName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = "Only lastName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Only lastName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="EmptyToLog3_DifferentfullName">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     </bpws:sources>
                                 </bpws:empty>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Log1-input"
-                                    name="Log1"
+                                    inputVariable="TP_Log1-input"
+                                    name="TP_Log1"
                                     tibex:xpdlId="253cdf37-b98a-40ec-ac10-a3552781fe66" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="MapperToLog1_samefullName"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OKTAindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastName&quot;/>&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is present in OKTA  because ------> &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1997,15 +2000,15 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Log2-input"
-                                    name="Log2"
+                                    inputVariable="TP_Log2-input"
+                                    name="TP_Log2"
                                     tibex:xpdlId="b3a4572b-a623-48cf-9f9a-9b770ddf6c73" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToLog1_DifferentlastName"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OKTAindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastName&quot;/>&lt;xsl:template name=&quot;Log2-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA because -----> &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2029,15 +2032,15 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Log3-input"
-                                    name="Log3"
+                                    inputVariable="TP_Log3-input"
+                                    name="TP_Log3"
                                     tibex:xpdlId="0553b33d-91be-4459-88b5-f84db4631b02" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToLog2_DifferentfirstName"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OKTAindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastName&quot;/>&lt;xsl:template name=&quot;Log3-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because -----> &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2061,15 +2064,15 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Log4-input"
-                                    name="Log4"
+                                    inputVariable="TP_Log4-input"
+                                    name="TP_Log4"
                                     tibex:xpdlId="f69cd9c1-8401-4318-bca0-963fd98ae874" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToLog3_DifferentfullName"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OKTAindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastName&quot;/>&lt;xsl:template name=&quot;Log4-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because -----> &amp;quot;,$Check_firstName_and_lastName/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log4-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2204,8 +2207,7 @@
                         subProcessName="ch.txg.common.travelperk.sl.GetUsersList" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="Copy_1_ForEach" tibex:group="foreach"
-                tibex:indexToGlobal="false" tibex:xpdlId="6c54d9f8-fabd-412c-a1cd-34eaee486292">
+            <bpws:scope name="Copy_1_ForEach" tibex:group="foreach" tibex:xpdlId="6c54d9f8-fabd-412c-a1cd-34eaee486292">
                 <bpws:targets>
                     <bpws:target linkName="ForEachToCopy_1_OKTAvsTRAVELPERK"/>
                 </bpws:targets>
@@ -2251,9 +2253,9 @@
                                     tibex:group="groupEnd" tibex:xpdlId="114470a2-57bf-4997-89f9-bd1c32b431a1"/>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Check_firstName_and_lastNameTP-input"
-                                    name="Check_firstName_and_lastNameTP"
-                                    outputVariable="Check_firstName_and_lastNameTP"
+                                    inputVariable="Check_firstName_and_lastNameOKTA-input"
+                                    name="Check_firstName_and_lastNameOKTA"
+                                    outputVariable="Check_firstName_and_lastNameOKTA"
                                     tibex:xpdlId="2ec9a0f7-aa7e-4aa3-855b-b84a1c71eacc" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="GroupStartToMapper1"/>
@@ -2270,10 +2272,10 @@
                                     <bpws:source linkName="MapperToLog1_samefullName1">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
 
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     </bpws:sources>
                                     <tibex:inputBindings>
@@ -2300,7 +2302,7 @@
                                     </tibex:config>
                                     </tibex:activityExtension>
                                 </bpws:extensionActivity>
-                                <bpws:empty name="CheckTP" tibex:xpdlId="ae8ad385-f8d0-4018-916d-a95e828415db">
+                                <bpws:empty name="CheckOKTA" tibex:xpdlId="ae8ad385-f8d0-4018-916d-a95e828415db">
                                     <bpws:targets>
                                     <bpws:target linkName="MapperToEmpty1"/>
                                     </bpws:targets>
@@ -2308,37 +2310,37 @@
                                     <bpws:source linkName="EmptyToLog1_DifferentlastName1">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = &quot;Only firstName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Only firstName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = "Only firstName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Only firstName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="EmptyToLog2_DifferentfirstName1">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = &quot;Only lastName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Only lastName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = "Only lastName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Only lastName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="CheckTPToTP_Log4">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     </bpws:sources>
                                 </bpws:empty>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="TP_Log1-input"
-                                    name="TP_Log1"
+                                    inputVariable="OKTA_Log1-input"
+                                    name="OKTA_Log1"
                                     tibex:xpdlId="b16f8161-441b-4251-ac31-70582f24a7a2" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="MapperToLog1_samefullName1"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&lt;xsl:template name=&quot;TP_Log1-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/okta_id, &amp;quot; is present in OKTA because -----> &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2362,15 +2364,15 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="TP_Log2-input"
-                                    name="TP_Log2"
+                                    inputVariable="OKTA_Log2-input"
+                                    name="OKTA_Log2"
                                     tibex:xpdlId="8f5070e5-41f0-4f17-b041-c63be312158a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToLog1_DifferentlastName1"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&lt;xsl:template name=&quot;TP_Log2-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2394,15 +2396,15 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="TP_Log3-input"
-                                    name="TP_Log3"
+                                    inputVariable="OKTA_Log3-input"
+                                    name="OKTA_Log3"
                                     tibex:xpdlId="433af066-4268-427c-a8ce-58243cb640e6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="EmptyToLog2_DifferentfirstName1"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&lt;xsl:template name=&quot;TP_Log3-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2426,15 +2428,15 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="TP_Log4-input"
-                                    name="TP_Log4"
+                                    inputVariable="OKTA_Log4-input"
+                                    name="OKTA_Log4"
                                     tibex:xpdlId="b519462e-bd47-4f74-a16c-d700b0bd7f63" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="CheckTPToTP_Log4"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:template name=&quot;TP_Log4-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because -----> &amp;quot;,$Check_firstName_and_lastNameTP/lodID[$TPindexid]/ComparisonDetails)&quot;/>&lt;/message>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log4-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
