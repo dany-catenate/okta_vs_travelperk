@@ -1269,5 +1269,14 @@
 			<isOverride>false</isOverride>
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
+		<globalVariable>
+			<name>//ch.txg.travel.syncUsers.md//dataFormatResourceProperty</name>
+			<value></value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+			<useLookupValue>false</useLookupValue>
+		</globalVariable>
 	</globalVariables>
 </repository>

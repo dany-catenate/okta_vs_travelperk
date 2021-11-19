@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_ocOwgDD1Eeyfe-EenmU1Cw" targetNamespace="http://tns.tibco.com/bw/composite/ch.txg.travel.syncUsers.md" name="ch.txg.travel.syncUsers.md" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:dataformat="http://ns.tibco.com/bw/palette/dataformat" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_ocOwgDD1Eeyfe-EenmU1Cw" targetNamespace="http://tns.tibco.com/bw/composite/ch.txg.travel.syncUsers.md" name="ch.txg.travel.syncUsers.md" compositeext:version="1.0.0" compositeext:formatVersion="2">
   <sca:property xmi:id="_pTPRADD1Eeyfe-EenmU1Cw" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pTjaEDD1Eeyfe-EenmU1Cw" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pTtLEDD1Eeyfe-EenmU1Cw" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pT1t8DD1Eeyfe-EenmU1Cw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pT9CsDD1Eeyfe-EenmU1Cw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pUHawDD1Eeyfe-EenmU1Cw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_cwJAAEljEeyaG-tvPD4MKA" name="dataFormatResourceProperty" type="dataformat:DataFormat" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7MGe0DGLEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/AccessToken/grant_type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7cJF8DGLEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/AccessToken/scope" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7seA8DGLEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/AccessToken/client_assertion_type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
@@ -15,5 +16,8 @@
   <sca:property xmi:id="_Jubf0DGMEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/JWT/Payload/sub" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:component xmi:id="_EQc8wEecEeyTivx7Gw360g" name="ComponentSyncUsers_TLP" compositeext:version="1.0.0.qualifier">
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_EQc8wUecEeyTivx7Gw360g" processName="ch.txg.travel.syncusers.tlp.SyncUsers_TLP"/>
+  </sca:component>
+  <sca:component xmi:id="_1j-mgEk2EeyaG-tvPD4MKA" name="ComponenttestOfSyncUsers_TLP" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_1j-mgUk2EeyaG-tvPD4MKA" processName="ch.txg.travel.syncusers.tlp.testOfSyncUsers_TLP"/>
   </sca:component>
 </sca:composite>

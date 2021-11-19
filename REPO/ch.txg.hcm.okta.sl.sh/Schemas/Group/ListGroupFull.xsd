@@ -61,13 +61,13 @@
       </element>
     </sequence>
   </complexType>
-  <element name="ListMembersFullElement" type="tns:ListMembersFullElementType" nillable="true"/>
+  <element name="ListMembersFullElement" nillable="true" type="tns:ListMembersFullElementType"/>
   <complexType name="ListMembersFullElementArrayType">
     <sequence>
       <element maxOccurs="unbounded" minOccurs="0" ref="tns:ListMembersFullElement"/>
     </sequence>
   </complexType>
-  <element name="ListMembersFullElementArray" type="tns:ListMembersFullElementArrayType" nillable="true"/>
+  <element name="ListMembersFullElementArray" nillable="true" type="tns:ListMembersFullElementArrayType"/>
   
   <element name="ListGroupMembersFull_items" type="tns:ListListGroupMembersFullElementType"/>
     
@@ -93,9 +93,9 @@
 				<complexType>
 					<sequence>
 						<sequence>
-							<element name="grant_type" type="string" minOccurs="1" />
-							<element name="scope" type="string" minOccurs="1" />
-							<element name="client_assertion_type" type="string" minOccurs="1" />
+							<element minOccurs="1" name="grant_type" type="string"/>
+							<element minOccurs="1" name="scope" type="string"/>
+							<element minOccurs="1" name="client_assertion_type" type="string"/>
 						</sequence>
 					</sequence>
 				</complexType>
@@ -108,22 +108,22 @@
 								<complexType>
 									<sequence>
 										<sequence>
-											<element name="aud" type="string" />
-											<element name="iss" type="string" />
-											<element name="sub" type="string" />
+											<element name="aud" type="string"/>
+											<element name="iss" type="string"/>
+											<element name="sub" type="string"/>
 										</sequence>
 									</sequence>
 								</complexType>
 							</element>
-							<element name="privateKeyString" type="string" />
+							<element name="privateKeyString" type="string"/>
 							
 						</sequence>
 					</sequence>
 				</complexType>
 				
 			</element>
-			<element name="search" type="string" minOccurs="0" maxOccurs="1"/>
+			<element maxOccurs="1" minOccurs="0" name="limit" type="string"/>
 		</sequence>
 	</complexType>
-  <element name="listGroupMembersFullInput" type="tns:listGroupMembersFullInputType" />
+  <element name="listGroupMembersFullInput" type="tns:listGroupMembersFullInputType"/>
 </schema>

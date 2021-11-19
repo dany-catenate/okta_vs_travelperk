@@ -11,6 +11,8 @@
     xmlns:ns2="http://tns.tibco.com/bw/json/1622113472004"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+dae692ee-ec4a-4c19-b5b4-717617310b23"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/accumulateoutput+5ad30d31-9aaf-40d0-96e2-a644d49c63d7"
+    xmlns:ns5="http://ch/txg/core/lehf/common/AuditTypes/0100"
+    xmlns:ns6="http://www.example.com/namespaces/tns/1637331442523"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -207,7 +209,13 @@
         extraErrorVars="true" modifiers="public"
         productVersion="2.6.1 V57 2021-02-13" scalable="true"
         singleton="true" stateless="true" type="IT"/>
-    <tibex:ProcessInterface context="" input="" output="{http://ch/txg/hcm/okta/ListGroupMembers}ListGroupMembersElementArray"/>
+    <tibex:ProcessInterface context=""
+        input="{http://www.example.com/namespaces/tns/1637331442523}limit" output="{http://ch/txg/hcm/okta/ListGroupMembers}ListGroupMembersElementArray">
+        <tibex:errorList>
+            <tibex:error
+                error="{http://ch/txg/core/lehf/common/AuditTypes/0100}LogAudit" name="LogAudit"/>
+        </tibex:errorList>
+    </tibex:ProcessInterface>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -559,6 +567,41 @@
                                     x="269"
                                     xsi:type="notation:Bounds" y="146"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
+                                    <layoutConstraint x="126"
+                                    xsi:type="notation:Bounds" y="305"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -571,7 +614,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="411"
+                                    <layoutConstraint height="464"
                                     width="994" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -581,7 +624,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="411" width="883" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="464" width="997" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -591,7 +634,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="435" width="883" x="1"
+                    <layoutConstraint height="497" width="997" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -600,7 +643,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="487" width="1339" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="549" width="1339" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -671,6 +714,17 @@
             <element href="//0/@process/@activity/@activity/@activities.4/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.4"/>
+            <bendpoints points="[0, 25, 0, -59]$[0, 60, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -681,11 +735,17 @@
             namespace="http://www.example.com/namespaces/tns/1637144746123" prefix="tns1"/>
         <tibex:namespaceItem
             namespace="http://www.example.com/namespaces/tns/1637056185853" prefix="tns8"/>
+        <tibex:namespaceItem
+            namespace="http://ch/txg/core/lehf/common/AuditTypes/0100" prefix="tns2"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/bw/xslt/custom-functions" prefix="tib"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/json/1622113472004"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1637144746123"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/core/lehf/common/loggerType/0100"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/hcm/okta/ListGroupMembers"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/core/lehf/common/AuditTypes/0100"/>
+    <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.com/namespaces/tns/1637331442523"/>
     <bpws:variables>
         <bpws:variable element="ns:ProcessContext"
             name="_processContext" sca-bpel:internal="true"/>
@@ -727,6 +787,12 @@
         <bpws:variable element="ns0:ListGroupMembersElementArray"
             name="End-input" sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns4:AccumulatedOutput" name="Accumulate" sca-bpel:internal="true"/>
+        <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
+        <bpws:variable name="FaultName" sca-bpel:internal="true" type="xsd:string"/>
+        <bpws:variable element="ns:OptionalErrorReport"
+            name="_errorOptional" sca-bpel:internal="true"/>
+        <bpws:variable element="ns6:limit" name="Start"
+            sca-bpel:internal="true" tibex:parameter="in"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -743,11 +809,13 @@
                 <bpws:link name="GetLoggerParamsToCallProcess" tibex:linkType="SUCCESS"/>
                 <bpws:link name="CallGroupsToForEach" tibex:linkType="SUCCESS"/>
                 <bpws:link name="ForEachToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="CallGroupsToEmpty" tibex:linkType="ERROR"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
                     eventTimeout="0" name="Start"
-                    tibex:xpdlId="a1358117-eeff-46da-8f2b-30bb62e4a5ac" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    tibex:xpdlId="a1358117-eeff-46da-8f2b-30bb62e4a5ac"
+                    variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
                         <bpws:source linkName="StartToGetSharedVariable"/>
                     </bpws:sources>
@@ -781,10 +849,17 @@
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="CallGroupsToForEach"/>
+                        <bpws:source linkName="CallGroupsToEmpty"
+                            tibex:faultDetailsVar="CallGroups" tibex:faultNameVar="FaultName">
+                            <tibex:DesignExpression>
+                                <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##error##]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1622113472004&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;AccessTokenGrant_type&quot;/>&lt;xsl:param name=&quot;AccessTokenScope&quot;/>&lt;xsl:param name=&quot;AccessTokenClientAssertionType&quot;/>&lt;xsl:param name=&quot;JwtPayloadPrivateKeyString&quot;/>&lt;xsl:param name=&quot;JwtPayloadAud&quot;/>&lt;xsl:param name=&quot;JwtPayloadIss&quot;/>&lt;xsl:param name=&quot;JwtPayloadSub&quot;/>&lt;xsl:template name=&quot;CallGroups-input&quot; match=&quot;/&quot;>&lt;tns7:listGroupMembersFullInput>&lt;tns7:accessToken>&lt;tns7:grant_type>&lt;xsl:value-of select=&quot;$AccessTokenGrant_type&quot;/>&lt;/tns7:grant_type>&lt;tns7:scope>&lt;xsl:value-of select=&quot;$AccessTokenScope&quot;/>&lt;/tns7:scope>&lt;tns7:client_assertion_type>&lt;xsl:value-of select=&quot;$AccessTokenClientAssertionType&quot;/>&lt;/tns7:client_assertion_type>&lt;/tns7:accessToken>&lt;tns7:jwt>&lt;tns7:payload>&lt;tns7:aud>&lt;xsl:value-of select=&quot;$JwtPayloadAud&quot;/>&lt;/tns7:aud>&lt;tns7:iss>&lt;xsl:value-of select=&quot;$JwtPayloadIss&quot;/>&lt;/tns7:iss>&lt;tns7:sub>&lt;xsl:value-of select=&quot;$JwtPayloadSub&quot;/>&lt;/tns7:sub>&lt;/tns7:payload>&lt;tns7:privateKeyString>&lt;xsl:value-of select=&quot;$JwtPayloadPrivateKeyString&quot;/>&lt;/tns7:privateKeyString>&lt;/tns7:jwt>&lt;/tns7:listGroupMembersFullInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns7=&quot;http://tns.tibco.com/bw/json/1622113472004&quot; xmlns:tns=&quot;http://www.example.com/namespaces/tns/1637331442523&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;AccessTokenGrant_type&quot;/>&#xa;    &lt;xsl:param name=&quot;AccessTokenScope&quot;/>&#xa;    &lt;xsl:param name=&quot;AccessTokenClientAssertionType&quot;/>&#xa;    &lt;xsl:param name=&quot;JwtPayloadPrivateKeyString&quot;/>&#xa;    &lt;xsl:param name=&quot;JwtPayloadAud&quot;/>&#xa;    &lt;xsl:param name=&quot;JwtPayloadIss&quot;/>&#xa;    &lt;xsl:param name=&quot;JwtPayloadSub&quot;/>&#xa;    &lt;xsl:param name=&quot;Start&quot;/>&#xa;    &lt;xsl:template name=&quot;CallGroups-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns7:listGroupMembersFullInput>&#xa;            &lt;tns7:accessToken>&#xa;                &lt;tns7:grant_type>&#xa;                    &lt;xsl:value-of select=&quot;$AccessTokenGrant_type&quot;/>&#xa;                &lt;/tns7:grant_type>&#xa;                &lt;tns7:scope>&#xa;                    &lt;xsl:value-of select=&quot;$AccessTokenScope&quot;/>&#xa;                &lt;/tns7:scope>&#xa;                &lt;tns7:client_assertion_type>&#xa;                    &lt;xsl:value-of select=&quot;$AccessTokenClientAssertionType&quot;/>&#xa;                &lt;/tns7:client_assertion_type>&#xa;            &lt;/tns7:accessToken>&#xa;            &lt;tns7:jwt>&#xa;                &lt;tns7:payload>&#xa;                    &lt;tns7:aud>&#xa;                        &lt;xsl:value-of select=&quot;$JwtPayloadAud&quot;/>&#xa;                    &lt;/tns7:aud>&#xa;                    &lt;tns7:iss>&#xa;                        &lt;xsl:value-of select=&quot;$JwtPayloadIss&quot;/>&#xa;                    &lt;/tns7:iss>&#xa;                    &lt;tns7:sub>&#xa;                        &lt;xsl:value-of select=&quot;$JwtPayloadSub&quot;/>&#xa;                    &lt;/tns7:sub>&#xa;                &lt;/tns7:payload>&#xa;                &lt;tns7:privateKeyString>&#xa;                    &lt;xsl:value-of select=&quot;$JwtPayloadPrivateKeyString&quot;/>&#xa;                &lt;/tns7:privateKeyString>&#xa;            &lt;/tns7:jwt>&#xa;            &lt;tns7:limit>&#xa;                &lt;xsl:value-of select=&quot;$Start/tns:numberOfGroups&quot;/>&#xa;            &lt;/tns7:limit>&#xa;        &lt;/tns7:listGroupMembersFullInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="ch.txg.travel.syncusers.md.CallGroup" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -911,6 +986,11 @@
                     </bpws:forEach>
                 </bpws:sequence>
             </bpws:scope>
+            <bpws:empty name="Empty" tibex:xpdlId="1f35e6ca-4626-416e-bd8a-cf6f44eea920">
+                <bpws:targets>
+                    <bpws:target linkName="CallGroupsToEmpty"/>
+                </bpws:targets>
+            </bpws:empty>
         </bpws:flow>
     </bpws:scope>
 </bpws:process>

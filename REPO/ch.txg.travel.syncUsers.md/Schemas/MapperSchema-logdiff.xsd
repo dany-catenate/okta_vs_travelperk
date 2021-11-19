@@ -6,9 +6,12 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element name="travelperk_id" type="xsd:string"/>
+                        <xsd:element minOccurs="0" name="okta_id" type="xsd:string"/>
                         <xsd:element name="okta_companyCode" type="xsd:string"/>
-                        <xsd:element minOccurs="0" name="firstName" type="xsd:string"/>
-                        <xsd:element minOccurs="0" name="lastName" type="xsd:string"/>
+                        <xsd:element minOccurs="0" name="travelperk_firstName" type="xsd:string"/>
+                        <xsd:element minOccurs="0" name="okta_firstName" type="xsd:string"/>
+                        <xsd:element minOccurs="0" name="travelperk_lastName" type="xsd:string"/>
+                        <xsd:element minOccurs="0" name="okta_lastName" type="xsd:string"/>
                         <xsd:element name="ComparisonDetails" type="xsd:string"/>
                     </xsd:sequence>
         </xsd:complexType>
