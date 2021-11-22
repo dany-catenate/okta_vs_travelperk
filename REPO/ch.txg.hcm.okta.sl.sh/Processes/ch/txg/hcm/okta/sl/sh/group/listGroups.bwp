@@ -2305,7 +2305,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError" tibex:xpdlId="4a033091-b19b-4568-95cc-6450f62ec148">
+            <bpws:scope name="RepeatOnError" tibex:group="repeatOnError"
+                tibex:indexToGlobal="false" tibex:xpdlId="4a033091-b19b-4568-95cc-6450f62ec148">
                 <bpws:targets>
                     <bpws:target linkName="Copy_1_LoglistGroupMembersOutputToRepeatOnError"/>
                 </bpws:targets>

@@ -19,6 +19,8 @@
     xmlns:ns18="http://tns.tibco.com/bw/palette/internal/activityerror+bw.parse.parsedata"
     xmlns:ns19="http://tns.tibco.com/bw/activity/parse/xsd/+95546dc7-6896-4ad5-9402-42bf1c3964b3+output"
     xmlns:ns2="http://ch/txg/travelperk/Get_Invoices"
+    xmlns:ns20="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+1845a27c-26da-4c4a-b83b-9aa9899ddf68"
+    xmlns:ns21="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+3e189bca-51eb-403f-a2f6-e9d4baa35341"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+013f2f13-11b2-48de-8962-3a56ead4aae4"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/accumulateoutput+7a88f5ee-c839-4688-a7ce-d2ee256afdbe"
     xmlns:ns5="http://www.tibco.com/pe/WriteToLogActivitySchema"
@@ -231,6 +233,45 @@
             </xs:complexType>
             <xs:element name="ActivityInput" type="tns:LogParametersType"/>
         </xs:schema>
+        <schema
+            targetNamespace="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:tibex="http://www.tibco.com/bpel/2007/extensions" xmlns:tns="http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions">
+            <element name="DefaultFault">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="message" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="msgCode" type="string"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+1845a27c-26da-4c4a-b83b-9aa9899ddf68"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://ch/txg/core/lehf/common/AuditTypes/0100" xmlns:tns="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+1845a27c-26da-4c4a-b83b-9aa9899ddf68">
+            <import namespace="http://ch/txg/core/lehf/common/AuditTypes/0100"/>
+            <element name="ErrorLinkHandlerFaultData" type="tns:ErrorLinkHandlerFaultDataType"/>
+            <complexType name="ErrorLinkHandlerFaultDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:LogAudit"/>
+                </choice>
+            </complexType>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+3e189bca-51eb-403f-a2f6-e9d4baa35341"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://ch/txg/core/lehf/common/AuditTypes/0100" xmlns:tns="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+3e189bca-51eb-403f-a2f6-e9d4baa35341">
+            <import namespace="http://ch/txg/core/lehf/common/AuditTypes/0100"/>
+            <element name="ErrorLinkHandlerFaultData" type="tns:ErrorLinkHandlerFaultDataType"/>
+            <complexType name="ErrorLinkHandlerFaultDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:LogAudit"/>
+                </choice>
+            </complexType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="CordoniV"
         createdOn="Tue Oct 19 18:00:10 CEST 2021" description=""
@@ -394,8 +435,8 @@
 
                                     <layoutConstraint
                                     width="230"
-                                    x="48"
-                                    xsi:type="notation:Bounds" y="172"/>
+                                    x="64"
+                                    xsi:type="notation:Bounds" y="17"/>
                                     </children>
 
                                     <children type="4002">
@@ -448,224 +489,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="220"
-                                    xsi:type="notation:Bounds" y="284"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.4"/>
-
-                                    <layoutConstraint
-                                    x="401"
-                                    xsi:type="notation:Bounds" y="74"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.5"/>
-
-                                    <layoutConstraint
-                                    x="508"
-                                    xsi:type="notation:Bounds" y="201"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.6"/>
-
-                                    <layoutConstraint
-                                    x="581"
-                                    xsi:type="notation:Bounds" y="284"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.7"/>
-
-                                    <layoutConstraint
-                                    x="514"
-                                    xsi:type="notation:Bounds" y="374"/>
+                                    x="305"
+                                    xsi:type="notation:Bounds" y="17"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -682,8 +507,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="459"
-                                    width="801" xsi:type="notation:Bounds"/>
+                                    height="139"
+                                    width="483" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -695,8 +520,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="459"
-                                    width="804"
+                                    height="139"
+                                    width="486"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -791,9 +616,9 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="503" width="844"
-                                    x="581"
-                                    xsi:type="notation:Bounds" y="-235"/>
+                                    height="170" width="419"
+                                    x="522"
+                                    xsi:type="notation:Bounds" y="-6"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -828,8 +653,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.3"/>
                                     <layoutConstraint
-                                    width="167" x="185"
-                                    xsi:type="notation:Bounds" y="472"/>
+                                    width="167" x="68"
+                                    xsi:type="notation:Bounds" y="389"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -864,8 +689,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.4"/>
                                     <layoutConstraint
-                                    width="190" x="369"
-                                    xsi:type="notation:Bounds" y="472"/>
+                                    width="190" x="57"
+                                    xsi:type="notation:Bounds" y="503"/>
                                     </children>
                                     <children type="4002">
                                     <children type="4017">
@@ -994,9 +819,10 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
+                                    height="15"
                                     width="249"
-                                    x="-7"
-                                    xsi:type="notation:Bounds" y="183"/>
+                                    x="4"
+                                    xsi:type="notation:Bounds" y="41"/>
                                     </children>
 
                                     <children type="4002">
@@ -1049,224 +875,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="220"
-                                    xsi:type="notation:Bounds" y="278"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.4"/>
-
-                                    <layoutConstraint
-                                    x="401"
-                                    xsi:type="notation:Bounds" y="68"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.5"/>
-
-                                    <layoutConstraint
-                                    x="508"
-                                    xsi:type="notation:Bounds" y="195"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.6"/>
-
-                                    <layoutConstraint
-                                    x="581"
-                                    xsi:type="notation:Bounds" y="278"/>
-                                    </children>
-
-                                    <children type="4002">
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <children type="4017">
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
-                                    </children>
-
-                                    <styles
-                                    fontName="Segoe UI"
-                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
-
-                                    <styles
-                                    backgroundColor="16777215"
-                                    gradientEndColor="50431"
-                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
-
-                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.7"/>
-
-                                    <layoutConstraint
-                                    x="508"
-                                    xsi:type="notation:Bounds" y="370"/>
+                                    x="258"
+                                    xsi:type="notation:Bounds" y="41"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1283,8 +893,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="482"
-                                    width="774" xsi:type="notation:Bounds"/>
+                                    height="144"
+                                    width="436" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1296,8 +906,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="482"
-                                    width="777"
+                                    height="157"
+                                    width="439"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -1392,9 +1002,79 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="526" width="817"
-                                    x="1174"
-                                    xsi:type="notation:Bounds" y="273"/>
+                                    height="188" width="479"
+                                    x="770"
+                                    xsi:type="notation:Bounds" y="195"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.8"/>
+                                    <layoutConstraint x="249"
+                                    xsi:type="notation:Bounds" y="361"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.9"/>
+                                    <layoutConstraint x="412"
+                                    xsi:type="notation:Bounds" y="437"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1408,8 +1088,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="1185"
-                                    width="2104" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="727"
+                                    width="1455" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1418,7 +1098,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="853" width="1619" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="683" width="1458" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1428,7 +1108,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="877" width="1619" x="1"
+                    <layoutConstraint height="751" width="1458" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1437,7 +1117,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="1261" width="2449" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="704" width="1706" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1495,7 +1175,8 @@
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints
-                points="[11, -24, -504, 279]$[11, -303, -504, 0]$[119, -303, -396, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[0, -24, -68, 176]$[0, -198, -68, 2]$[60, -198, -8, 2]" xsi:type="notation:RelativeBendpoints"/>
+            <targetAnchor id="(0.021479713603818614,0.5235294117647059)" xsi:type="notation:IdentityAnchor"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
@@ -1510,78 +1191,6 @@
                 points="[17, 25, -133, -187]$[133, 188, -17, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.0"/>
-            <bendpoints
-                points="[12, 0, -154, 28]$[49, 0, -117, 28]$[49, -28, -117, 0]$[93, -28, -73, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
-            <bendpoints
-                points="[-1, 25, -124, -87]$[-1, 112, -124, 0]$[99, 112, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint x="26" xsi:type="notation:Location" y="-15"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.2"/>
-            <bendpoints
-                points="[26, -6, -300, 74]$[26, -84, -300, -4]$[302, -84, -24, -4]" xsi:type="notation:RelativeBendpoints"/>
-            <sourceAnchor id="(0.34959349593495936,0.13333333333333333)" xsi:type="notation:IdentityAnchor"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint x="-23" xsi:type="notation:Location" y="-18"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.3"/>
-            <bendpoints
-                points="[25, 0, -263, 83]$[59, 0, -229, 83]$[59, -86, -229, -3]$[264, -86, -24, -3]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
-            <children type="6002">
-                <layoutConstraint x="-25" xsi:type="notation:Location" y="-14"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[25, 5, -311, 5]$[312, 5, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
-            <children type="6002">
-                <layoutConstraint x="-31" xsi:type="notation:Location" y="13"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.5"/>
-            <bendpoints
-                points="[25, 0, -269, -90]$[58, 0, -236, -90]$[58, 78, -236, -12]$[270, 78, -24, -12]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.1"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
             <children type="6002">
@@ -1591,68 +1200,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.0"/>
             <bendpoints
-                points="[12, 0, -154, 28]$[49, 0, -117, 28]$[49, -28, -117, 0]$[93, -28, -73, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
-            <bendpoints
-                points="[-6, 25, -170, -70]$[-6, 104, -170, 9]$[140, 104, -24, 9]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint x="26" xsi:type="notation:Location" y="-15"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.2"/>
-            <bendpoints
-                points="[23, -6, -351, 122]$[23, -108, -351, 20]$[350, -108, -24, 20]" xsi:type="notation:RelativeBendpoints"/>
-            <sourceAnchor id="(0.34959349593495936,0.13333333333333333)" xsi:type="notation:IdentityAnchor"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
-            <children type="6002">
-                <layoutConstraint x="-23" xsi:type="notation:Location" y="-18"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.3"/>
-            <bendpoints
-                points="[25, 0, -263, 83]$[59, 0, -229, 83]$[59, -86, -229, -3]$[264, -86, -24, -3]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4" type="4006">
-            <children type="6002">
-                <layoutConstraint x="-25" xsi:type="notation:Location" y="-14"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.4"/>
-            <bendpoints points="[25, 5, -311, 5]$[312, 5, -24, 5]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
-            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
-            <children type="6002">
-                <layoutConstraint x="-31" xsi:type="notation:Location" y="13"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.5"/>
-            <bendpoints
-                points="[25, 0, -256, -68]$[58, 0, -223, -68]$[58, 92, -223, 24]$[264, 92, -17, 24]" xsi:type="notation:RelativeBendpoints"/>
-            <targetAnchor id="(0.35772357723577236,0.0)" xsi:type="notation:IdentityAnchor"/>
+                points="[12, -1, -124, 1]$[29, -1, -107, 1]$[29, -11, -107, -9]$[49, -11, -87, -9]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -1664,7 +1212,65 @@
             <styles fontColor="8388863" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[0, 198, -588, -336]$[0, 541, -588, 7]$[197, 541, -391, 7]" xsi:type="notation:RelativeBendpoints"/>
+                points="[94, 20, -55, -137]$[94, 166, -55, 9]$[138, 166, -11, 9]" xsi:type="notation:RelativeBendpoints"/>
+            <sourceAnchor id="(0.28878281622911695,0.8588235294117647)" xsi:type="notation:IdentityAnchor"/>
+            <targetAnchor id="(0.025052192066805846,0.4734042553191489)" xsi:type="notation:IdentityAnchor"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.0"/>
+            <bendpoints
+                points="[78, 0, -120, 0]$[126, 0, -72, 0]$[174, 0, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.1"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
+            <bendpoints points="[12, 4, -180, 0]$[114, 0, -78, -4]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.8" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.7"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.6"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.9" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.8"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1744,22 +1350,18 @@
             name="Check_firstName_and_lastNameTP-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:logid"
             name="Check_firstName_and_lastNameTP" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="TP_Log1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="TP_Log2-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="TP_Log3-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="TP_Log4-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:logid"
             name="Check_firstName_and_lastNameOKTA-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:logid"
             name="Check_firstName_and_lastNameOKTA" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput"
-            name="OKTA_Log1-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput"
-            name="OKTA_Log2-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput"
-            name="OKTA_Log3-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput"
-            name="OKTA_Log4-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput" name="Log1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns15:DefaultFault" name="Throw1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns15:DefaultFault" name="Throw2-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns20:ErrorLinkHandlerFaultData"
+            name="_error_SyncUser_BSL" sca-bpel:internal="true"/>
+        <bpws:variable element="ns21:ErrorLinkHandlerFaultData"
+            name="_error_GetUsersListTravelPerk" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1777,12 +1379,14 @@
                     name="Map_SyncUser_BSL-oktaToMap_GetUsersListTravelPerk" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SetSharedVariableToSyncUser_BSL" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SyncUser_BSLToGetUsersList" tibex:linkType="SUCCESS"/>
-                <bpws:link name="GetUsersListToForEach_TRAVELPERKvsOKTA"
+                <bpws:link name="GetUsersListTravelPerkToForEach"
                     tibex:label="TRAVELPERK vs OKTA" tibex:linkType="SUCCESS"/>
                 <bpws:link name="SetSharedVariableToMap_SyncUser_test"
                     tibex:label="test" tibex:linkType="ERROR"/>
-                <bpws:link name="ForEachToCopy_1_OKTAvsTRAVELPERK"
+                <bpws:link name="ForEachToCopy_1_ForEach"
                     tibex:label="OKTA vs TRAVELPERK" tibex:linkType="SUCCESS"/>
+                <bpws:link name="SyncUser_BSLToThrow" tibex:linkType="ERROR"/>
+                <bpws:link name="GetUsersListTravelPerkToThrow" tibex:linkType="ERROR"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1845,10 +1449,10 @@
             </bpws:extensionActivity>
             <bpws:scope name="ForEach" tibex:group="foreach" tibex:xpdlId="b2213215-224c-4b11-9535-1797872ad0b1">
                 <bpws:targets>
-                    <bpws:target linkName="GetUsersListToForEach_TRAVELPERKvsOKTA"/>
+                    <bpws:target linkName="GetUsersListTravelPerkToForEach"/>
                 </bpws:targets>
                 <bpws:sources>
-                    <bpws:source linkName="ForEachToCopy_1_OKTAvsTRAVELPERK"/>
+                    <bpws:source linkName="ForEachToCopy_1_ForEach"/>
                 </bpws:sources>
                 <bpws:sequence name="sequence" tibex:group="foreach" tibex:xpdlId="8c82af56-445a-4a84-b17d-c454c9140c09">
                     <bpws:empty name="GroupInit" tibex:group="groupInit"/>
@@ -1864,25 +1468,15 @@
                         <bpws:scope name="innerScope" tibex:xpdlId="f5e79488-b4c5-4f34-82e1-33566e15090a">
                             <bpws:flow name="flow1" tibex:xpdlId="c00437b2-84d9-485d-90f9-6152aeaf1b89">
                                 <bpws:links>
-                                    <bpws:link name="GroupStartToMapper" tibex:linkType="SUCCESS"/>
-                                    <bpws:link name="MapperToEmpty" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                     <bpws:link
-                                    name="MapperToLog1_samefullName"
-                                    tibex:label="same fullName" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                    name="Check_firstName_and_lastNameTPToLog" tibex:linkType="SUCCESS"/>
                                     <bpws:link
-                                    name="EmptyToLog1_DifferentlastName"
-                                    tibex:label="Different lastName" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                    <bpws:link
-                                    name="EmptyToLog2_DifferentfirstName"
-                                    tibex:label="Different firstName" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                    <bpws:link
-                                    name="EmptyToLog3_DifferentfullName"
-                                    tibex:label="Different fullName" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                    name="GroupStartToCheck_firstName_and_lastNameTP" tibex:linkType="SUCCESS"/>
                                 </bpws:links>
                                 <bpws:empty name="GroupStart"
                                     tibex:group="groupStart" tibex:xpdlId="3a26ac96-91be-4d9c-a285-55a89acc0a6e">
                                     <bpws:sources>
-                                    <bpws:source linkName="GroupStartToMapper"/>
+                                    <bpws:source linkName="GroupStartToCheck_firstName_and_lastNameTP"/>
                                     </bpws:sources>
                                 </bpws:empty>
                                 <bpws:empty name="GroupEnd"
@@ -1894,25 +1488,10 @@
                                     outputVariable="Check_firstName_and_lastNameTP"
                                     tibex:xpdlId="a796ba82-f45c-4997-b0f9-b8b0be38d372" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="GroupStartToMapper"/>
+                                    <bpws:target linkName="GroupStartToCheck_firstName_and_lastNameTP"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="MapperToEmpty">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="MapperToLog1_samefullName">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
+                                    <bpws:source linkName="Check_firstName_and_lastNameTPToLog"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
@@ -1938,141 +1517,17 @@
                                     </tibex:config>
                                     </tibex:activityExtension>
                                 </bpws:extensionActivity>
-                                <bpws:empty name="CheckTP" tibex:xpdlId="b7b88575-b929-47d1-bb9e-ba2d2355661f">
-                                    <bpws:targets>
-                                    <bpws:target linkName="MapperToEmpty"/>
-                                    </bpws:targets>
-                                    <bpws:sources>
-                                    <bpws:source linkName="EmptyToLog1_DifferentlastName">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Only firstName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Only firstName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="EmptyToLog2_DifferentfirstName">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Only lastName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Only lastName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="EmptyToLog3_DifferentfullName">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    </bpws:sources>
-                                </bpws:empty>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="TP_Log1-input"
-                                    name="TP_Log1"
-                                    tibex:xpdlId="253cdf37-b98a-40ec-ac10-a3552781fe66" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    inputVariable="Log-input"
+                                    name="Log"
+                                    tibex:xpdlId="8ab43e9b-2b92-4c3c-bae9-1c18b942af1a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="MapperToLog1_samefullName"/>
+                                    <bpws:target linkName="Check_firstName_and_lastNameTPToLog"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                </bpws:extensionActivity>
-                                <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="TP_Log2-input"
-                                    name="TP_Log2"
-                                    tibex:xpdlId="b3a4572b-a623-48cf-9f9a-9b770ddf6c73" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="EmptyToLog1_DifferentlastName"/>
-                                    </bpws:targets>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                </bpws:extensionActivity>
-                                <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="TP_Log3-input"
-                                    name="TP_Log3"
-                                    tibex:xpdlId="0553b33d-91be-4459-88b5-f84db4631b02" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="EmptyToLog2_DifferentfirstName"/>
-                                    </bpws:targets>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                </bpws:extensionActivity>
-                                <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="TP_Log4-input"
-                                    name="TP_Log4"
-                                    tibex:xpdlId="f69cd9c1-8401-4318-bca0-963fd98ae874" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="EmptyToLog3_DifferentfullName"/>
-                                    </bpws:targets>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;OKTAindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&#xa;    &lt;xsl:template name=&quot;Log4-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;OKTAindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastNameTP&quot;/>&lt;xsl:template name=&quot;Log-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;xsl:choose>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &amp;quot;Both firstName and lastName are the same in Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &amp;quot;Only firstName is the same in both Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &amp;quot;Only lastName is the same in both Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails = &amp;quot;Neither firstName nor lastName are same in Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;travelperk id: &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/travelperk_id, &amp;quot; is NOT present in OKTA  because --> &amp;quot;, $Check_firstName_and_lastNameTP/lodID[$OKTAindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2176,6 +1631,13 @@
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="SyncUser_BSLToGetUsersList"/>
+                        <bpws:source linkName="SyncUser_BSLToThrow"
+                            tibex:faultDetailsVar="SyncUser_BSL" tibex:faultNameVar="FaultName">
+                            <tibex:DesignExpression>
+                                <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##error##]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
@@ -2196,7 +1658,15 @@
                         <bpws:target linkName="SyncUser_BSLToGetUsersList"/>
                     </bpws:targets>
                     <bpws:sources>
-                        <bpws:source linkName="GetUsersListToForEach_TRAVELPERKvsOKTA"/>
+                        <bpws:source linkName="GetUsersListTravelPerkToForEach"/>
+                        <bpws:source
+                            linkName="GetUsersListTravelPerkToThrow"
+                            tibex:faultDetailsVar="GetUsersListTravelPerk" tibex:faultNameVar="FaultName">
+                            <tibex:DesignExpression>
+                                <tibex:expression expression="##error##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##error##]]></bpws:transitionCondition>
+                        </bpws:source>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
@@ -2209,7 +1679,7 @@
             </bpws:extensionActivity>
             <bpws:scope name="Copy_1_ForEach" tibex:group="foreach" tibex:xpdlId="6c54d9f8-fabd-412c-a1cd-34eaee486292">
                 <bpws:targets>
-                    <bpws:target linkName="ForEachToCopy_1_OKTAvsTRAVELPERK"/>
+                    <bpws:target linkName="ForEachToCopy_1_ForEach"/>
                 </bpws:targets>
                 <bpws:sources/>
                 <bpws:sequence name="Copy_1_sequence"
@@ -2230,18 +1700,8 @@
                                 <bpws:links>
                                     <bpws:link
                                     name="GroupStartToMapper1" tibex:linkType="SUCCESS"/>
-                                    <bpws:link name="MapperToEmpty1" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                     <bpws:link
-                                    name="MapperToLog1_samefullName1"
-                                    tibex:label="same fullName" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                    <bpws:link
-                                    name="EmptyToLog1_DifferentlastName1"
-                                    tibex:label="Different lastName" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                    <bpws:link
-                                    name="EmptyToLog2_DifferentfirstName1"
-                                    tibex:label="Different firstName" tibex:linkType="SUCCESSWITHCONDITION"/>
-                                    <bpws:link name="CheckTPToTP_Log4"
-                                    tibex:label="Different fullName" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                    name="Check_firstName_and_lastNameOKTAToLog1" tibex:linkType="SUCCESS"/>
                                 </bpws:links>
                                 <bpws:empty name="Copy_1_GroupStart"
                                     tibex:group="groupStart" tibex:xpdlId="97a21342-5fb1-4b36-aba6-4d97204e0f74">
@@ -2261,21 +1721,14 @@
                                     <bpws:target linkName="GroupStartToMapper1"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="MapperToEmpty1">
+                                    <bpws:source linkName="Check_firstName_and_lastNameOKTAToLog1"/>
+                                    <bpws:source linkName="">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
 
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="MapperToLog1_samefullName1">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
                                     </bpws:source>
                                     </bpws:sources>
                                     <tibex:inputBindings>
@@ -2302,141 +1755,17 @@
                                     </tibex:config>
                                     </tibex:activityExtension>
                                 </bpws:extensionActivity>
-                                <bpws:empty name="CheckOKTA" tibex:xpdlId="ae8ad385-f8d0-4018-916d-a95e828415db">
-                                    <bpws:targets>
-                                    <bpws:target linkName="MapperToEmpty1"/>
-                                    </bpws:targets>
-                                    <bpws:sources>
-                                    <bpws:source linkName="EmptyToLog1_DifferentlastName1">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Only firstName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Only firstName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="EmptyToLog2_DifferentfirstName1">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Only lastName is the same in both Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Only lastName is the same in both Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    <bpws:source linkName="CheckTPToTP_Log4">
-                                    <tibex:DesignExpression>
-                                    <tibex:expression
-                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &quot;Neither firstName nor lastName are same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
-                                    </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = "Neither firstName nor lastName are same in Okta and travelperk."]]></bpws:transitionCondition>
-                                    </bpws:source>
-                                    </bpws:sources>
-                                </bpws:empty>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="OKTA_Log1-input"
-                                    name="OKTA_Log1"
-                                    tibex:xpdlId="b16f8161-441b-4251-ac31-70582f24a7a2" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    inputVariable="Log1-input"
+                                    name="Log1"
+                                    tibex:xpdlId="34ddeb8c-7e8a-4264-b32d-da390d5e2dd9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="MapperToLog1_samefullName1"/>
+                                    <bpws:target linkName="Check_firstName_and_lastNameOKTAToLog1"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log1-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                </bpws:extensionActivity>
-                                <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="OKTA_Log2-input"
-                                    name="OKTA_Log2"
-                                    tibex:xpdlId="8f5070e5-41f0-4f17-b041-c63be312158a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="EmptyToLog1_DifferentlastName1"/>
-                                    </bpws:targets>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log2-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                </bpws:extensionActivity>
-                                <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="OKTA_Log3-input"
-                                    name="OKTA_Log3"
-                                    tibex:xpdlId="433af066-4268-427c-a8ce-58243cb640e6" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="EmptyToLog2_DifferentfirstName1"/>
-                                    </bpws:targets>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log3-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
-                                    </tibex:inputBindings>
-                                    <tibex:config>
-                                    <bwext:BWActivity
-                                    activityTypeID="bw.generalactivities.log"
-                                    version="6.0.0.001"
-                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
-                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
-                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-                                    <activityConfig>
-                                    <properties
-                                    name="config" xsi:type="activityconfig:EMFProperty">
-                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Log"/>
-                                    <value
-                                    role="Info"
-                                    suppressJobInfo="true" xsi:type="generalactivities:Log"/>
-                                    </properties>
-                                    </activityConfig>
-                                    </bwext:BWActivity>
-                                    </tibex:config>
-                                    </tibex:activityExtension>
-                                </bpws:extensionActivity>
-                                <bpws:extensionActivity>
-                                    <tibex:activityExtension
-                                    inputVariable="OKTA_Log4-input"
-                                    name="OKTA_Log4"
-                                    tibex:xpdlId="b519462e-bd47-4f74-a16c-d700b0bd7f63" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
-                                    <bpws:targets>
-                                    <bpws:target linkName="CheckTPToTP_Log4"/>
-                                    </bpws:targets>
-                                    <tibex:inputBindings>
-                                    <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&#xa;    &lt;xsl:param name=&quot;TPindexid&quot;/>&#xa;    &lt;xsl:template name=&quot;TP_Log4-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns6:ActivityInput>&#xa;            &lt;message>&#xa;                &lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&quot;/>&#xa;            &lt;/message>&#xa;        &lt;/tns6:ActivityInput>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;xsl:choose>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Both firstName and lastName are the same in Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Only firstName is the same in both Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Only lastName is the same in both Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Neither firstName nor lastName are same in Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2463,6 +1792,26 @@
                     </bpws:forEach>
                 </bpws:sequence>
             </bpws:scope>
+            <bpws:throw faultName="ns15:DefaultFault"
+                faultVariable="Throw1-input" name="Throw1" tibex:xpdlId="1b1f1a35-b0d6-49ff-b2e2-b85895d2b4bb">
+                <tibex:inputBindings>
+                    <tibex:partBinding
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Throw-input&quot; match=&quot;/&quot;>&lt;tns9:DefaultFault/>&lt;/xsl:template> &lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                </tibex:inputBindings>
+                <bpws:targets>
+                    <bpws:target linkName="SyncUser_BSLToThrow"/>
+                </bpws:targets>
+            </bpws:throw>
+            <bpws:throw faultName="ns15:DefaultFault"
+                faultVariable="Throw2-input" name="Throw2" tibex:xpdlId="eb5aa914-72b2-4154-8a7b-0dcd39e0532d">
+                <tibex:inputBindings>
+                    <tibex:partBinding
+                        expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns9=&quot;http://schemas.tibco.com/bw/plugins/basic/6.0/Exceptions&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;Throw-input&quot; match=&quot;/&quot;>&lt;tns9:DefaultFault/>&lt;/xsl:template> &lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                </tibex:inputBindings>
+                <bpws:targets>
+                    <bpws:target linkName="GetUsersListTravelPerkToThrow"/>
+                </bpws:targets>
+            </bpws:throw>
         </bpws:flow>
     </bpws:scope>
 </bpws:process>
