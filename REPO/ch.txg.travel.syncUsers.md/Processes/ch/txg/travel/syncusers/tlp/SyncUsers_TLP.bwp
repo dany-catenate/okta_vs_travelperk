@@ -1860,8 +1860,7 @@
                         variableName="//ch.txg.core.lehf.common.sh//loggerParams" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="ForEach" tibex:group="foreach"
-                tibex:indexToGlobal="false" tibex:xpdlId="58eea98d-81d1-4b44-ba1d-ba5b3aa0720f">
+            <bpws:scope name="ForEach" tibex:group="foreach" tibex:xpdlId="58eea98d-81d1-4b44-ba1d-ba5b3aa0720f">
                 <bpws:targets>
                     <bpws:target linkName="GetUsersListToForEach_TRAVELPERKvsOKTA"/>
                 </bpws:targets>

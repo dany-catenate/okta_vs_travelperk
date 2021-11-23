@@ -1114,7 +1114,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@faultHandlers/@catch.0/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    x="82"
+                                    x="68"
                                     xsi:type="notation:Bounds" y="48"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1392,8 +1392,6 @@
             name="_errorOptional" sca-bpel:internal="true"/>
         <bpws:variable element="ns10:groups" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
-        <bpws:variable element="ns11:ErrorLinkHandlerFaultData"
-            name="_error_listGroups" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:LogAudit"
             name="ThrowBusiness-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns13:loggerParams"
@@ -1407,6 +1405,8 @@
         <bpws:variable element="ns12:LogAudit" name="Throw-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns12:LogAudit"
             name="ThrowGenericError-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns11:ErrorLinkHandlerFaultData"
+            name="_error_listGroups" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>

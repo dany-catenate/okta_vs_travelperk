@@ -1114,7 +1114,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[-24, 0, 45, -91]$[-69, 0, 0, -91]$[-69, 67, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-24, 0, 44, -77]$[-68, 0, 0, -77]$[-68, 53, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.4"
@@ -1226,8 +1226,6 @@
             name="ThrowBusiness1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:LogAudit"
             name="ThrowBusiness2-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns7:ErrorLinkHandlerFaultData"
-            name="_error_CallGroups" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:LogAudit" name="ThrowSystem2-input" sca-bpel:internal="true"/>
         <bpws:variable name="FaultName1" sca-bpel:internal="true" type="xsd:string"/>
         <bpws:variable element="ns:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
@@ -1237,6 +1235,8 @@
         <bpws:variable element="ns5:LogAudit"
             name="ThrowGenericError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns5:LogAudit" name="Throw-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns7:ErrorLinkHandlerFaultData"
+            name="_error_CallGroups" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1374,8 +1374,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="ForEach" tibex:group="foreach"
-                tibex:indexToGlobal="false" tibex:xpdlId="f30f5b26-2b8b-45b6-8a97-f5586f4d61da">
+            <bpws:scope name="ForEach" tibex:group="foreach" tibex:xpdlId="f30f5b26-2b8b-45b6-8a97-f5586f4d61da">
                 <bpws:targets>
                     <bpws:target linkName="CallGroupsToForEach"/>
                 </bpws:targets>

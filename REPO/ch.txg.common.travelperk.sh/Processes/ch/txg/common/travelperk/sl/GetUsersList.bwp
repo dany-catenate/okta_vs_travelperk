@@ -2116,8 +2116,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="RepeatOnError" tibex:group="repeatUntil"
-                tibex:indexToGlobal="false" tibex:xpdlId="2f68e4a3-4df2-41c8-9bec-a9da67447cf5">
+            <bpws:scope name="RepeatOnError" tibex:group="repeatUntil" tibex:xpdlId="2f68e4a3-4df2-41c8-9bec-a9da67447cf5">
                 <bpws:targets>
                     <bpws:target linkName="GetLoggerParamsToRepeatOnError"/>
                 </bpws:targets>

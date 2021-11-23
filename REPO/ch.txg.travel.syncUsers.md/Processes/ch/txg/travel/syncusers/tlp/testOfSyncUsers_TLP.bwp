@@ -24,6 +24,9 @@
     xmlns:ns22="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput"
     xmlns:ns23="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeOutput"
     xmlns:ns24="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.Rest"
+    xmlns:ns25="activity.jsonRender.output+bcc25b3a-9133-4259-b8f8-d5dd0b373c17+ActivityOutputType"
+    xmlns:ns26="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonRender"
+    xmlns:ns27="activity.jsonRender.output+59a75119-2b5e-4657-a002-5fc68599fa15+ActivityOutputType"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+013f2f13-11b2-48de-8962-3a56ead4aae4"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/accumulateoutput+7a88f5ee-c839-4688-a7ce-d2ee256afdbe"
     xmlns:ns5="http://www.tibco.com/pe/WriteToLogActivitySchema"
@@ -496,6 +499,80 @@
                 </choice>
             </complexType>
         </schema>
+        <schema
+            targetNamespace="activity.jsonRender.output+59a75119-2b5e-4657-a002-5fc68599fa15+ActivityOutputType"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="activity.jsonRender.output+59a75119-2b5e-4657-a002-5fc68599fa15+ActivityOutputType">
+            <complexType name="ActivityOutputClassType">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1"
+                        name="jsonString" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="ActivityOutputClass" type="tns:ActivityOutputClassType"/>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions">
+            <element name="JSONActivityException" type="tns:JSONActivityException"/>
+            <complexType name="JSONActivityException">
+                <sequence>
+                    <element name="msg" type="string"/>
+                    <element minOccurs="0" name="msgCode" type="string"/>
+                </sequence>
+            </complexType>
+            <element name="UnsupportedEncodingException" type="tns:UnsupportedEncodingExceptionType"/>
+            <complexType name="UnsupportedEncodingExceptionType">
+                <complexContent>
+                    <extension base="tns:JSONActivityException">
+                        <sequence>
+                            <element name="encoding" type="string"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="JSONParserExceptionType">
+                <complexContent>
+                    <extension base="tns:JSONActivityException"/>
+                </complexContent>
+            </complexType>
+            <element name="JSONParserException" type="tns:JSONParserExceptionType"/>
+            <complexType name="JSONTransformExceptionType">
+                <complexContent>
+                    <extension base="tns:JSONActivityException"/>
+                </complexContent>
+            </complexType>
+            <element name="JSONTransformException" type="tns:JSONTransformExceptionType"/>
+            <complexType name="JSONRenderExceptionType">
+                <complexContent>
+                    <extension base="tns:JSONActivityException"/>
+                </complexContent>
+            </complexType>
+            <element name="JSONRenderException" type="tns:JSONRenderExceptionType"/>
+            <complexType name="JSONRestExceptionType">
+                <complexContent>
+                    <extension base="tns:JSONActivityException"/>
+                </complexContent>
+            </complexType>
+            <element name="JSONRestException" type="tns:JSONRestExceptionType"/>
+            <complexType name="ValidationExceptionType">
+                <complexContent>
+                    <extension base="tns:JSONActivityException"/>
+                </complexContent>
+            </complexType>
+            <element name="ValidationException" type="tns:ValidationExceptionType"/>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonRender"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.JsonRender">
+            <import namespace="http://schemas.tibco.com/bw/plugins/xml/5.0/JSONActivitiesExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:JSONRenderException"/>
+                </choice>
+            </complexType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="CordoniV"
         createdOn="Tue Oct 19 18:00:10 CEST 2021" description=""
@@ -745,7 +822,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
                                     height="148"
-                                    width="606"
+                                    width="572"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -840,7 +917,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="192" width="646"
+                                    height="192" width="612"
                                     x="522"
                                     xsi:type="notation:Bounds" y="-6"/>
                                     </children>
@@ -1155,8 +1232,8 @@
 
                                     <layoutConstraint
                                     width="142"
-                                    x="311"
-                                    xsi:type="notation:Bounds" y="148"/>
+                                    x="346"
+                                    xsi:type="notation:Bounds" y="162"/>
                                     </children>
 
                                     <children type="4002">
@@ -1246,6 +1323,60 @@
                                     x="309"
                                     xsi:type="notation:Bounds" y="-23"/>
                                     </children>
+
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.6"/>
+
+                                    <layoutConstraint
+                                    x="471"
+                                    xsi:type="notation:Bounds" y="47"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1261,8 +1392,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="233"
-                                    width="538" xsi:type="notation:Bounds"/>
+                                    height="255"
+                                    width="606" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1274,8 +1405,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="253"
-                                    width="507"
+                                    height="278"
+                                    width="609"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -1370,7 +1501,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="297" width="547"
+                                    height="322" width="649"
                                     x="770"
                                     xsi:type="notation:Bounds" y="195"/>
                                     </children>
@@ -1456,8 +1587,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="628"
-                                    width="1371" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="651"
+                                    width="1546" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1466,7 +1597,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="628" width="1374" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="651" width="1549" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1476,7 +1607,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="652" width="1374" x="1"
+                    <layoutConstraint height="675" width="1549" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1485,7 +1616,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="704" width="1716" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="727" width="1891" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1543,7 +1674,7 @@
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints
-                points="[0, -24, -68, 176]$[0, -198, -68, 2]$[60, -198, -8, 2]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-2, -24, -66, 165]$[-2, -188, -66, 1]$[52, -188, -12, 1]" xsi:type="notation:RelativeBendpoints"/>
             <targetAnchor id="(0.021479713603818614,0.5235294117647059)" xsi:type="notation:IdentityAnchor"/>
         </edges>
         <edges
@@ -1568,7 +1699,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.0"/>
             <bendpoints
-                points="[12, -7, -136, 38]$[21, -7, -127, 38]$[21, -40, -127, 5]$[61, -40, -87, 5]" xsi:type="notation:RelativeBendpoints"/>
+                points="[12, -1, -136, 45]$[21, -1, -127, 45]$[21, -41, -127, 5]$[61, -41, -87, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
@@ -1580,7 +1711,7 @@
             <styles fontColor="8388863" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[-44, 23, -137, -115]$[-44, 150, -137, 12]$[82, 150, -11, 12]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-42, 23, -139, -179]$[-42, 215, -139, 13]$[82, 215, -15, 13]" xsi:type="notation:RelativeBendpoints"/>
             <sourceAnchor id="(0.28878281622911695,0.8588235294117647)" xsi:type="notation:IdentityAnchor"/>
             <targetAnchor id="(0.025052192066805846,0.4734042553191489)" xsi:type="notation:IdentityAnchor"/>
         </edges>
@@ -1646,22 +1777,33 @@
             <children type="6002">
                 <layoutConstraint x="-8" xsi:type="notation:Location" y="-14"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.2"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
-            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
             <children type="6002">
                 <layoutConstraint xsi:type="notation:Location" y="40"/>
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.3"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.4"/>
             <bendpoints
-                points="[0, 25, 41, -82]$[0, 54, 41, -53]$[-41, 54, 0, -53]$[-41, 83, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+                points="[8, 25, 123, -90]$[8, 63, 123, -52]$[-116, 63, -1, -52]$[-116, 91, -1, -24]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1753,10 +1895,6 @@
         <bpws:variable element="ns5:ActivityInput" name="OKTA_Log-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:DefaultFault" name="Throw1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:DefaultFault" name="Throw2-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns20:ErrorLinkHandlerFaultData"
-            name="_error_SyncUser_BSL" sca-bpel:internal="true"/>
-        <bpws:variable element="ns21:ErrorLinkHandlerFaultData"
-            name="_error_GetUsersListTravelPerk" sca-bpel:internal="true"/>
         <bpws:variable name="httpClientResource"
             sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
             sca-bpel:property="yes"
@@ -1784,7 +1922,17 @@
         <bpws:variable element="ns2:Get_Users_Output" name="Mapper" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:Get_Users_Output"
             name="Mapper-input1" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:Get_Users_Output" name="Mapper1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:Get_Users_Output" name="Mapper2" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:Get_Users_Output"
+            name="RenderJSON-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns27:ActivityOutputClass"
+            name="RenderJSON" sca-bpel:internal="true"/>
+        <bpws:variable element="ns26:ActivityErrorData"
+            name="_error_RenderJSON" sca-bpel:internal="true"/>
+        <bpws:variable element="ns20:ErrorLinkHandlerFaultData"
+            name="_error_SyncUser_BSL" sca-bpel:internal="true"/>
+        <bpws:variable element="ns21:ErrorLinkHandlerFaultData"
+            name="_error_GetUsersListTravelPerk" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1870,7 +2018,8 @@
                         variableName="//ch.txg.core.lehf.common.sh//loggerParams" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="ForEach" tibex:group="foreach" tibex:xpdlId="b2213215-224c-4b11-9535-1797872ad0b1">
+            <bpws:scope name="ForEach" tibex:group="foreach"
+                tibex:indexToGlobal="false" tibex:xpdlId="b2213215-224c-4b11-9535-1797872ad0b1">
                 <bpws:targets>
                     <bpws:target linkName="GetUsersListTravelPerkToForEach"/>
                 </bpws:targets>
@@ -2100,11 +2249,15 @@
                         subProcessName="ch.txg.common.travelperk.sl.GetUsersList" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="Copy_1_ForEach" tibex:group="foreach" tibex:xpdlId="6c54d9f8-fabd-412c-a1cd-34eaee486292">
+            <bpws:scope name="Copy_1_ForEach" tibex:group="foreach"
+                tibex:indexToGlobal="false" tibex:xpdlId="6c54d9f8-fabd-412c-a1cd-34eaee486292">
                 <bpws:targets>
                     <bpws:target linkName="ForEachToCopy_1_ForEach"/>
                 </bpws:targets>
-                <bpws:sources/>
+                <bpws:sources>
+                    <bpws:source/>
+                    <bpws:source/>
+                </bpws:sources>
                 <bpws:sequence name="Copy_1_sequence"
                     tibex:group="foreach" tibex:xpdlId="b6b840a4-b650-465d-8434-92653561a826">
                     <bpws:empty name="Copy_1_GroupInit"
@@ -2127,8 +2280,9 @@
                                     name="Check_firstName_and_lastNameOKTAToLog1" tibex:linkType="SUCCESS"/>
                                     <bpws:link name="OKTA_Update"
                                     tibex:label="Update" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                    <bpws:link name="MapperToRenderJSON" tibex:linkType="SUCCESS"/>
                                     <bpws:link
-                                    name="MapperToUpdateUser_on_TP" tibex:linkType="SUCCESS"/>
+                                    name="RenderJSONToUpdateUser_on_TP" tibex:linkType="SUCCESS"/>
                                 </bpws:links>
                                 <bpws:empty name="Copy_1_GroupStart"
                                     tibex:group="groupStart" tibex:xpdlId="97a21342-5fb1-4b36-aba6-4d97204e0f74">
@@ -2232,11 +2386,11 @@
                                     outputVariable="UpdateUser_on_TP"
                                     tibex:xpdlId="98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
-                                    <bpws:target linkName="MapperToUpdateUser_on_TP"/>
+                                    <bpws:target linkName="RenderJSONToUpdateUser_on_TP"/>
                                     </bpws:targets>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns16=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+3495cb09-d5bb-453e-ae51-3e472dd8b508+RestInvokeInput&quot; xmlns:tns11=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput&quot; xmlns:tns3=&quot;http://ch/txg/travelperk/Get_Invoices&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;UpdateUser_on_TP-input&quot; match=&quot;/&quot;>&lt;tns11:RestActivityInput>&lt;ResourcePath>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/ResourcePath>&lt;/tns11:RestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns11=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;RenderJSON&quot;/>&lt;xsl:template name=&quot;UpdateUser_on_TP-input&quot; match=&quot;/&quot;>&lt;tns11:RestActivityInput>&lt;ResourcePath>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/ResourcePath>&lt;MessageBody>&lt;asciiContent>&lt;xsl:value-of select=&quot;$RenderJSON/jsonString&quot;/>&lt;/asciiContent>&lt;/MessageBody>&lt;/tns11:RestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2266,13 +2420,13 @@
                                     <tibex:activityExtension
                                     inputVariable="Mapper-input1"
                                     name="Mapper"
-                                    outputVariable="Mapper1"
+                                    outputVariable="Mapper2"
                                     tibex:xpdlId="510fc58e-3b98-453c-8d69-35d816e4f6ea" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="OKTA_Update"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="MapperToUpdateUser_on_TP"/>
+                                    <bpws:source linkName="MapperToRenderJSON"/>
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
@@ -2292,6 +2446,44 @@
                                     <type href="http://ns.tibco.com/bw/palette/generalactivities#//Mapper"/>
                                     <value
                                     inputQName="Get_Invoices:Get_Users_Output" xsi:type="generalactivities:Mapper"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                    </tibex:activityExtension>
+                                </bpws:extensionActivity>
+                                <bpws:extensionActivity>
+                                    <tibex:activityExtension
+                                    inputVariable="RenderJSON-input"
+                                    name="RenderJSON"
+                                    outputVariable="RenderJSON"
+                                    tibex:xpdlId="59a75119-2b5e-4657-a002-5fc68599fa15" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="MapperToRenderJSON"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="RenderJSONToUpdateUser_on_TP"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://ch/txg/travelperk/Get_Invoices&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Mapper2&quot;/>&lt;xsl:template name=&quot;RenderJSON-input&quot; match=&quot;/&quot;>&lt;tns3:Get_Users_Output>&lt;xsl:for-each select=&quot;$Mapper2/tns3:users&quot;>&lt;tns3:users>&lt;xsl:if test=&quot;tns3:id&quot;>&lt;tns3:id>&lt;xsl:value-of select=&quot;tns3:id&quot;/>&lt;/tns3:id>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:user_name&quot;>&lt;tns3:user_name>&lt;xsl:value-of select=&quot;tns3:user_name&quot;/>&lt;/tns3:user_name>&lt;/xsl:if>&lt;xsl:copy-of select=&quot;tns3:name&quot;/>&lt;xsl:if test=&quot;tns3:preferred_language&quot;>&lt;tns3:preferred_language>&lt;xsl:value-of select=&quot;tns3:preferred_language&quot;/>&lt;/tns3:preferred_language>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:locale&quot;>&lt;tns3:locale>&lt;xsl:value-of select=&quot;tns3:locale&quot;/>&lt;/tns3:locale>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:active&quot;>&lt;tns3:active>&lt;xsl:value-of select=&quot;tns3:active&quot;/>&lt;/tns3:active>&lt;/xsl:if>&lt;xsl:if test=&quot;tns3:job_title&quot;>&lt;tns3:job_title>&lt;xsl:copy-of select=&quot;tns3:job_title/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns3:job_title&quot;/>&lt;/tns3:job_title>&lt;/xsl:if>&lt;xsl:for-each select=&quot;tns3:phone_numbers&quot;>&lt;tns3:phone_numbers>&lt;xsl:value-of select=&quot;.&quot;/>&lt;/tns3:phone_numbers>&lt;/xsl:for-each>&lt;xsl:if test=&quot;tns3:emergency_contact&quot;>&lt;tns3:emergency_contact>&lt;xsl:copy-of select=&quot;tns3:emergency_contact/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;tns3:emergency_contact&quot;/>&lt;/tns3:emergency_contact>&lt;/xsl:if>&lt;/tns3:users>&lt;/xsl:for-each>&lt;/tns3:Get_Users_Output>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.restjson.JsonRender"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/restjson#//JsonRender"/>
+                                    <value
+                                    jsonOutputStyle="None"
+                                    schemaType="Xsd" xsi:type="restjson:JsonRender">
+
+                                    <inputEditorElement href="platform:/resource/ch.txg.common.travelperk.sh/Schemas/Get_Users.xsd#//Get_Users_Output;XSDElementDeclaration=1"/>
+                                    </value>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>
