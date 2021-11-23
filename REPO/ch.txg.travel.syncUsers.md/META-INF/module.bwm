@@ -6,7 +6,6 @@
   <sca:property xmi:id="_pT1t8DD1Eeyfe-EenmU1Cw" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pT9CsDD1Eeyfe-EenmU1Cw" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_pUHawDD1Eeyfe-EenmU1Cw" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
-  <sca:property xmi:id="_cwJAAEljEeyaG-tvPD4MKA" name="dataFormatResourceProperty" type="dataformat:DataFormat" scaext:simpleValue="" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7MGe0DGLEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/AccessToken/grant_type" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7cJF8DGLEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/AccessToken/scope" type="XMLSchema:string" publicAccess="true" scalable="true"/>
   <sca:property xmi:id="_7seA8DGLEeyIaaQFcCrIKg" name="/ch.txg.travel.syncUsers.md/Okta/AccessToken/client_assertion_type" type="XMLSchema:string" publicAccess="true" scalable="true"/>

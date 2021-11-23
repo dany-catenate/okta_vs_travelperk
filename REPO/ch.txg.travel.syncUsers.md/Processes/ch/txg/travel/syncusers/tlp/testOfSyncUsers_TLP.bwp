@@ -21,6 +21,9 @@
     xmlns:ns2="http://ch/txg/travelperk/Get_Invoices"
     xmlns:ns20="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+1845a27c-26da-4c4a-b83b-9aa9899ddf68"
     xmlns:ns21="http://tns.tibco.com/bw/palette/internal/errorlinkhandler+3e189bca-51eb-403f-a2f6-e9d4baa35341"
+    xmlns:ns22="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput"
+    xmlns:ns23="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeOutput"
+    xmlns:ns24="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.Rest"
     xmlns:ns3="http://tns.tibco.com/bw/palette/internal/activityerror+013f2f13-11b2-48de-8962-3a56ead4aae4"
     xmlns:ns4="http://tns.tibco.com/bw/palette/internal/accumulateoutput+7a88f5ee-c839-4688-a7ce-d2ee256afdbe"
     xmlns:ns5="http://www.tibco.com/pe/WriteToLogActivitySchema"
@@ -272,6 +275,227 @@
                 </choice>
             </complexType>
         </schema>
+        <xsd:schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput"
+            xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="RestInvokeInputType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="ResourcePath" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="MessageBody" type="tns:MessageBodyType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="HttpHeaders" type="tns:httpTransportHeaders"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="RestActivityInput" type="tns:RestInvokeInputType"/>
+            <xsd:complexType name="RestInvokeOutputType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1"
+                        name="statusCode" type="xsd:int"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="reasonPhrase" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="MessageBody" type="tns:MessageBodyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="RestActivityOutput" type="tns:RestInvokeOutputType"/>
+            <xsd:complexType name="MessageBodyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1"
+                        name="asciiContent" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="httpTransportHeaders">
+                <xsd:sequence>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Accept" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Accept-Charset" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Accept-Encoding" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Content-Type" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Content-Length" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Connection" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Cookie" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Pragma" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="DynamicHeaders" type="tns:dynamicHeadersType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="HttpHeaders" type="tns:httpTransportHeaders"/>
+            <xsd:complexType name="dynamicHeadersTypeDetails">
+                <xsd:sequence>
+                    <xsd:element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="Name" type="xsd:string"/>
+                    <xsd:element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="Value" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="dynamicHeadersType">
+                <xsd:sequence>
+                    <xsd:element form="unqualified"
+                        maxOccurs="unbounded" minOccurs="0"
+                        name="Header" type="tns:dynamicHeadersTypeDetails"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <xsd:schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeOutput"
+            xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeOutput" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:complexType name="RestInvokeInputType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="ResourcePath" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="MessageBody" type="tns:MessageBodyType"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="HttpHeaders" type="tns:httpTransportHeaders"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="RestActivityInput" type="tns:RestInvokeInputType"/>
+            <xsd:complexType name="RestInvokeOutputType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1"
+                        name="statusCode" type="xsd:int"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="reasonPhrase" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="MessageBody" type="tns:MessageBodyType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="RestActivityOutput" type="tns:RestInvokeOutputType"/>
+            <xsd:complexType name="MessageBodyType">
+                <xsd:sequence>
+                    <xsd:element maxOccurs="1" minOccurs="1"
+                        name="asciiContent" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="httpTransportHeaders">
+                <xsd:sequence>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Accept" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Accept-Charset" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Accept-Encoding" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Content-Type" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Content-Length" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Connection" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Cookie" type="xsd:string"/>
+                    <xsd:element form="unqualified" minOccurs="0"
+                        name="Pragma" type="xsd:string"/>
+                    <xsd:element maxOccurs="1" minOccurs="0"
+                        name="DynamicHeaders" type="tns:dynamicHeadersType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:element name="HttpHeaders" type="tns:httpTransportHeaders"/>
+            <xsd:complexType name="dynamicHeadersTypeDetails">
+                <xsd:sequence>
+                    <xsd:element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="Name" type="xsd:string"/>
+                    <xsd:element form="unqualified" maxOccurs="1"
+                        minOccurs="1" name="Value" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="dynamicHeadersType">
+                <xsd:sequence>
+                    <xsd:element form="unqualified"
+                        maxOccurs="unbounded" minOccurs="0"
+                        name="Header" type="tns:dynamicHeadersTypeDetails"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+        <schema attributeFormDefault="unqualified"
+            elementFormDefault="unqualified"
+            targetNamespace="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions">
+            <complexType name="StatusLineType">
+                <sequence>
+                    <element name="httpVersion" type="string"/>
+                    <element name="statusCode" type="integer"/>
+                    <element name="reasonPhrase" type="string"/>
+                </sequence>
+            </complexType>
+            <complexType name="HeadersType">
+                <sequence>
+                    <any maxOccurs="unbounded" minOccurs="0" processContents="lax"/>
+                </sequence>
+            </complexType>
+            <complexType name="HttpMessageType">
+                <sequence>
+                    <element name="headers" type="tns:HeadersType"/>
+                    <element minOccurs="0" name="binaryContent" type="base64Binary"/>
+                    <element minOccurs="0" name="asciiContent" type="string"/>
+                </sequence>
+            </complexType>
+            <complexType name="BaseExceptionType">
+                <sequence>
+                    <element form="unqualified" name="msg" type="string"/>
+                    <element form="unqualified" name="msgCode" type="string"/>
+                </sequence>
+            </complexType>
+            <complexType name="HttpExceptionType">
+                <complexContent>
+                    <extension base="tns:BaseExceptionType"/>
+                </complexContent>
+            </complexType>
+            <complexType name="HttpClientExceptionType">
+                <complexContent>
+                    <extension base="tns:HttpResponseExceptionType"/>
+                </complexContent>
+            </complexType>
+            <complexType name="HttpCommunicationExceptionType">
+                <complexContent>
+                    <extension base="tns:BaseExceptionType"/>
+                </complexContent>
+            </complexType>
+            <complexType name="HttpResponseExceptionType">
+                <complexContent>
+                    <extension base="tns:BaseExceptionType">
+                        <sequence>
+                            <element name="statusLine" type="tns:StatusLineType"/>
+                            <element minOccurs="0" name="httpMessage" type="tns:HttpMessageType"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+            <complexType name="HttpServerExceptionType">
+                <complexContent>
+                    <extension base="tns:HttpResponseExceptionType"/>
+                </complexContent>
+            </complexType>
+            <element name="HttpClientException" type="tns:HttpClientExceptionType"/>
+            <element name="HttpCommunicationException" type="tns:HttpCommunicationExceptionType"/>
+            <element name="HttpException" type="tns:HttpExceptionType"/>
+            <element name="HttpResponseException" type="tns:HttpResponseExceptionType"/>
+            <element name="HttpServerException" type="tns:HttpServerExceptionType"/>
+        </schema>
+        <schema elementFormDefault="unqualified"
+            targetNamespace="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.Rest"
+            xmlns="http://www.w3.org/2001/XMLSchema"
+            xmlns:Q1="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions" xmlns:tns="http://tns.tibco.com/bw/palette/internal/activityerror+bw.restjson.Rest">
+            <import namespace="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions"/>
+            <import namespace="http://schemas.tibco.com/bw/plugins/http/5.0/httpExceptions"/>
+            <element name="ActivityErrorData" type="tns:ActivityErrorDataType"/>
+            <complexType name="ActivityErrorDataType">
+                <choice>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:HttpCommunicationException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:HttpClientException"/>
+                    <element maxOccurs="1" minOccurs="0" ref="Q1:HttpServerException"/>
+                </choice>
+            </complexType>
+        </schema>
     </tibex:Types>
     <tibex:ProcessInfo callable="false" createdBy="CordoniV"
         createdOn="Tue Oct 19 18:00:10 CEST 2021" description=""
@@ -489,8 +713,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="305"
-                                    xsi:type="notation:Bounds" y="17"/>
+                                    x="284"
+                                    xsi:type="notation:Bounds" y="23"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -507,8 +731,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="139"
-                                    width="483" xsi:type="notation:Bounds"/>
+                                    height="148"
+                                    width="654" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -520,8 +744,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="139"
-                                    width="486"
+                                    height="148"
+                                    width="606"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -616,7 +840,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.2"/>
                                     <layoutConstraint
-                                    height="170" width="419"
+                                    height="192" width="646"
                                     x="522"
                                     xsi:type="notation:Bounds" y="-6"/>
                                     </children>
@@ -759,7 +983,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.6"/>
-                                    <layoutConstraint x="412"
+                                    <layoutConstraint
+                                    width="159" x="402"
                                     xsi:type="notation:Bounds" y="251"/>
                                     </children>
                                     <children type="4018">
@@ -821,7 +1046,7 @@
                                     <layoutConstraint
                                     height="15"
                                     width="249"
-                                    x="4"
+                                    x="16"
                                     xsi:type="notation:Bounds" y="41"/>
                                     </children>
 
@@ -875,8 +1100,151 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="258"
-                                    xsi:type="notation:Bounds" y="41"/>
+                                    x="252"
+                                    xsi:type="notation:Bounds" y="47"/>
+                                    </children>
+
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.4"/>
+
+                                    <layoutConstraint
+                                    width="142"
+                                    x="311"
+                                    xsi:type="notation:Bounds" y="148"/>
+                                    </children>
+
+                                    <children type="4002">
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <children type="4017">
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+
+                                    <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@activities.5"/>
+
+                                    <layoutConstraint
+                                    x="355"
+                                    xsi:type="notation:Bounds" y="47"/>
+                                    </children>
+
+                                    <children
+                                    description="Update the in user in travelperk"
+                                    fillColor="13369343"
+                                    fontName="Segoe UI"
+                                    lineColor="6737151"
+                                    lineWidth="1"
+                                    transparency="0"
+                                    type="Note" xsi:type="notation:Shape">
+
+                                    <children
+                                    type="DiagramName" xsi:type="notation:BasicDecorationNode">
+
+                                    <element xsi:nil="true"/>
+                                    </children>
+
+                                    <children
+                                    type="Description" xsi:type="notation:BasicDecorationNode">
+
+                                    <element xsi:nil="true"/>
+                                    </children>
+
+                                    <styles xsi:type="notation:TextStyle"/>
+
+                                    <styles xsi:type="notation:LineTypeStyle"/>
+
+                                    <element xsi:nil="true"/>
+
+                                    <layoutConstraint
+                                    height="65"
+                                    width="168"
+                                    x="309"
+                                    xsi:type="notation:Bounds" y="-23"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -893,8 +1261,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="144"
-                                    width="436" xsi:type="notation:Bounds"/>
+                                    height="233"
+                                    width="538" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -906,8 +1274,8 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="157"
-                                    width="439"
+                                    height="253"
+                                    width="507"
                                     x="15"
                                     xsi:type="notation:Bounds" y="20"/>
                                     </children>
@@ -1002,7 +1370,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.7"/>
                                     <layoutConstraint
-                                    height="188" width="479"
+                                    height="297" width="547"
                                     x="770"
                                     xsi:type="notation:Bounds" y="195"/>
                                     </children>
@@ -1073,8 +1441,8 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.9"/>
-                                    <layoutConstraint x="412"
-                                    xsi:type="notation:Bounds" y="437"/>
+                                    <layoutConstraint x="420"
+                                    xsi:type="notation:Bounds" y="431"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1088,8 +1456,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="727"
-                                    width="1455" xsi:type="notation:Bounds"/>
+                                    <layoutConstraint height="628"
+                                    width="1371" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1098,7 +1466,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="683" width="1458" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="628" width="1374" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1108,7 +1476,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="751" width="1458" x="1"
+                    <layoutConstraint height="652" width="1374" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -1117,7 +1485,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="704" width="1706" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="704" width="1716" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1200,19 +1568,19 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.0"/>
             <bendpoints
-                points="[12, -1, -124, 1]$[29, -1, -107, 1]$[29, -11, -107, -9]$[49, -11, -87, -9]" xsi:type="notation:RelativeBendpoints"/>
+                points="[12, -7, -136, 38]$[21, -7, -127, 38]$[21, -40, -127, 5]$[61, -40, -87, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7" type="4006">
             <children type="6002">
-                <layoutConstraint x="-35" xsi:type="notation:Location" y="26"/>
+                <layoutConstraint x="-35" xsi:type="notation:Location" y="8"/>
             </children>
             <styles lineColor="8388863" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="8388863" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[94, 20, -55, -137]$[94, 166, -55, 9]$[138, 166, -11, 9]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-44, 23, -137, -115]$[-44, 150, -137, 12]$[82, 150, -11, 12]" xsi:type="notation:RelativeBendpoints"/>
             <sourceAnchor id="(0.28878281622911695,0.8588235294117647)" xsi:type="notation:IdentityAnchor"/>
             <targetAnchor id="(0.025052192066805846,0.4734042553191489)" xsi:type="notation:IdentityAnchor"/>
         </edges>
@@ -1272,6 +1640,29 @@
             <element href="//0/@process/@activity/@activity/@links/@children.8"/>
             <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint x="-8" xsi:type="notation:Location" y="-14"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.2"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.3"/>
+            <bendpoints
+                points="[0, 25, 41, -82]$[0, 54, 41, -53]$[-41, 54, 0, -53]$[-41, 83, 0, -24]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -1304,6 +1695,10 @@
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
             namespace="http://tns.tibco.com/bw/activity/parse/xsd/+95546dc7-6896-4ad5-9402-42bf1c3964b3+input" prefix="tns10"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput" prefix="tns11"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/restinvoke+3495cb09-d5bb-453e-ae51-3e472dd8b508+RestInvokeInput" prefix="tns16"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ch/txg/core/lehf/common/loggerType/0100"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema"
@@ -1354,14 +1749,42 @@
             name="Check_firstName_and_lastNameOKTA-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns8:logid"
             name="Check_firstName_and_lastNameOKTA" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="Log-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns5:ActivityInput" name="Log1-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput" name="TP_Log-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns5:ActivityInput" name="OKTA_Log-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:DefaultFault" name="Throw1-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns15:DefaultFault" name="Throw2-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns20:ErrorLinkHandlerFaultData"
             name="_error_SyncUser_BSL" sca-bpel:internal="true"/>
         <bpws:variable element="ns21:ErrorLinkHandlerFaultData"
             name="_error_GetUsersListTravelPerk" sca-bpel:internal="true"/>
+        <bpws:variable name="httpClientResource"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/bw/models/sharedresource/httpclient}HttpClientConfiguration" type="xsd:string">
+            <bpws:from>
+                <bpws:literal>ch.txg.common.travelperk.sh.HttpTravelPerkClientResource</bpws:literal>
+            </bpws:from>
+        </bpws:variable>
+        <bpws:variable element="ns22:RestActivityInput"
+            name="UpdateUser_on_TP-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns23:RestActivityOutput"
+            name="UpdateUser_on_TP" sca-bpel:internal="true"/>
+        <bpws:variable element="ns24:ActivityErrorData"
+            name="_error_UpdateUser_on_TP" sca-bpel:internal="true"/>
+        <bpws:variable name="ch.txg.core.lehf.common.sh-ERROR_SEVERITY"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            tibex:propertySource="//ch.txg.core.lehf.common.sh///ch.txg.core.lehf.common.sh/Logging/ERROR_SEVERITY" type="xsd:string"/>
+        <bpws:variable name="ch.txg.common.travelperk.sh-Uri"
+            sca-bpel:hotUpdate="false" sca-bpel:privateProperty="true"
+            sca-bpel:property="yes"
+            tibex:propertySource="//ch.txg.common.travelperk.sh///Connections/Http/Users/Uri" type="xsd:string"/>
+        <bpws:variable element="ns2:Get_Users_Output"
+            name="Mapper-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:Get_Users_Output" name="Mapper" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:Get_Users_Output"
+            name="Mapper-input1" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:Get_Users_Output" name="Mapper1" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1519,8 +1942,8 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Log-input"
-                                    name="Log"
+                                    inputVariable="TP_Log-input"
+                                    name="TP_Log"
                                     tibex:xpdlId="8ab43e9b-2b92-4c3c-bae9-1c18b942af1a" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="Check_firstName_and_lastNameTPToLog"/>
@@ -1641,7 +2064,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding coercion=""
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.example.com/namespaces/tns/1637331442523&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SyncUser_BSL-input&quot; match=&quot;/&quot;>&lt;tns8:limit>&lt;tns8:numberOfGroups>&lt;xsl:value-of select=&quot;10&quot;/>&lt;/tns8:numberOfGroups>&lt;/tns8:limit>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns8=&quot;http://www.example.com/namespaces/tns/1637331442523&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;SyncUser_BSL-input&quot; match=&quot;/&quot;>&lt;tns8:limit>&lt;tns8:numberOfGroups>&lt;xsl:value-of select=&quot;3&quot;/>&lt;/tns8:numberOfGroups>&lt;/tns8:limit>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:CallProcess
                         subProcessName="ch.txg.travel.syncusers.bsl.SyncUser_BSL" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1702,6 +2125,10 @@
                                     name="GroupStartToMapper1" tibex:linkType="SUCCESS"/>
                                     <bpws:link
                                     name="Check_firstName_and_lastNameOKTAToLog1" tibex:linkType="SUCCESS"/>
+                                    <bpws:link name="OKTA_Update"
+                                    tibex:label="Update" tibex:linkType="SUCCESSWITHCONDITION"/>
+                                    <bpws:link
+                                    name="MapperToUpdateUser_on_TP" tibex:linkType="SUCCESS"/>
                                 </bpws:links>
                                 <bpws:empty name="Copy_1_GroupStart"
                                     tibex:group="groupStart" tibex:xpdlId="97a21342-5fb1-4b36-aba6-4d97204e0f74">
@@ -1757,12 +2184,22 @@
                                 </bpws:extensionActivity>
                                 <bpws:extensionActivity>
                                     <tibex:activityExtension
-                                    inputVariable="Log1-input"
-                                    name="Log1"
+                                    inputVariable="OKTA_Log-input"
+                                    name="OKTA_Log"
                                     tibex:xpdlId="34ddeb8c-7e8a-4264-b32d-da390d5e2dd9" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                                     <bpws:targets>
                                     <bpws:target linkName="Check_firstName_and_lastNameOKTAToLog1"/>
                                     </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="OKTA_Update">
+                                    <tibex:DesignExpression>
+                                    <tibex:expression
+                                    expression="$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails != &quot;Both firstName and lastName are the same in Okta and travelperk.&quot;" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    </tibex:DesignExpression>
+
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails != "Both firstName and lastName are the same in Okta and travelperk."]]></bpws:transitionCondition>
+                                    </bpws:source>
+                                    </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
                                     expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.tibco.com/pe/WriteToLogActivitySchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;Check_firstName_and_lastNameOKTA&quot;/>&lt;xsl:template name=&quot;Log1-input&quot; match=&quot;/&quot;>&lt;tns6:ActivityInput>&lt;xsl:choose>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Both firstName and lastName are the same in Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Only firstName is the same in both Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Only lastName is the same in both Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;xsl:when test=&quot;$Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails = &amp;quot;Neither firstName nor lastName are same in Okta and travelperk.&amp;quot;&quot;>&lt;message>&lt;xsl:value-of select=&quot;concat(&amp;quot;OKTA -id: &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/okta_id, &amp;quot; is not present in OKTA because --> &amp;quot;, $Check_firstName_and_lastNameOKTA/lodID[$TPindexid]/ComparisonDetails)&amp;#xD;&amp;#xA;&quot;/>&lt;/message>&lt;/xsl:when>&lt;/xsl:choose>&lt;/tns6:ActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
@@ -1781,6 +2218,80 @@
                                     <value
                                     role="Info"
                                     suppressJobInfo="true" xsi:type="generalactivities:Log"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                    </tibex:activityExtension>
+                                </bpws:extensionActivity>
+                                <bpws:extensionActivity>
+                                    <tibex:activityExtension
+                                    governedObjectTypes="BWHttpReference"
+                                    inputVariable="UpdateUser_on_TP-input"
+                                    name="UpdateUser_on_TP"
+                                    outputVariable="UpdateUser_on_TP"
+                                    tibex:xpdlId="98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="MapperToUpdateUser_on_TP"/>
+                                    </bpws:targets>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns16=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+3495cb09-d5bb-453e-ae51-3e472dd8b508+RestInvokeInput&quot; xmlns:tns11=&quot;http://www.tibco.com/namespaces/tnt/plugins/restinvoke+98c13b3f-e0ea-4d33-afa8-a26ab3ef7db4+RestInvokeInput&quot; xmlns:tns3=&quot;http://ch/txg/travelperk/Get_Invoices&quot; version=&quot;2.0&quot;>&lt;xsl:template name=&quot;UpdateUser_on_TP-input&quot; match=&quot;/&quot;>&lt;tns11:RestActivityInput>&lt;ResourcePath>&lt;xsl:value-of select=&quot;&amp;quot;&amp;quot;&quot;/>&lt;/ResourcePath>&lt;/tns11:RestActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.restjson.Rest"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:restjson="http://ns.tibco.com/bw/palette/restjson" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <attributeBindings
+                                    bindingType="moduleProperty"
+                                    eAttributeName="resourcePath" processProperty="ch.txg.common.travelperk.sh-Uri"/>
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/restjson#//RestInvokeActivity"/>
+                                    <value
+                                    httpClientSR="httpClientResource"
+                                    httpMethod="PATCH"
+                                    requestContentType="JSON"
+                                    responseAcceptType="JSON" xsi:type="restjson:RestInvokeActivity"/>
+                                    </properties>
+                                    </activityConfig>
+                                    </bwext:BWActivity>
+                                    </tibex:config>
+                                    </tibex:activityExtension>
+                                </bpws:extensionActivity>
+                                <bpws:extensionActivity>
+                                    <tibex:activityExtension
+                                    inputVariable="Mapper-input1"
+                                    name="Mapper"
+                                    outputVariable="Mapper1"
+                                    tibex:xpdlId="510fc58e-3b98-453c-8d69-35d816e4f6ea" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                                    <bpws:targets>
+                                    <bpws:target linkName="OKTA_Update"/>
+                                    </bpws:targets>
+                                    <bpws:sources>
+                                    <bpws:source linkName="MapperToUpdateUser_on_TP"/>
+                                    </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?> &lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://ch/txg/travelperk/Get_Invoices&quot; version=&quot;2.0&quot;> &lt;xsl:template name=&quot;Mapper-input1&quot; match=&quot;/&quot;> &lt;tns3:Get_Users_Output/>&lt;/xsl:template> &lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
+                                    <tibex:config>
+                                    <bwext:BWActivity
+                                    activityTypeID="bw.generalactivities.mapper"
+                                    version="6.0.0.001"
+                                    xmlns:Get_Invoices="http://ch/txg/travelperk/Get_Invoices"
+                                    xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                                    xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                                    xmlns:generalactivities="http://ns.tibco.com/bw/palette/generalactivities" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                                    <activityConfig>
+                                    <properties
+                                    name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/generalactivities#//Mapper"/>
+                                    <value
+                                    inputQName="Get_Invoices:Get_Users_Output" xsi:type="generalactivities:Mapper"/>
                                     </properties>
                                     </activityConfig>
                                     </bwext:BWActivity>

@@ -1516,13 +1516,13 @@
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints
-                points="[11, -24, -504, 279]$[11, -303, -504, 0]$[119, -303, -396, 0]" xsi:type="notation:RelativeBendpoints"/>
+                points="[15, -24, -508, 242]$[15, -261, -508, 5]$[119, -261, -404, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
         <edges
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
             <children type="6002">
-                <layoutConstraint x="-7" xsi:type="notation:Location" y="-30"/>
+                <layoutConstraint xsi:type="notation:Location" y="-16"/>
             </children>
             <styles lineColor="255" xsi:type="notation:ConnectorStyle"/>
             <styles fontColor="255" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
@@ -1546,10 +1546,10 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="-14" xsi:type="notation:Location" y="15"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles lineColor="8421631" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="8421631" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
             <bendpoints
                 points="[-1, 25, -124, -87]$[-1, 112, -124, 0]$[99, 112, -24, 0]" xsi:type="notation:RelativeBendpoints"/>
@@ -1564,7 +1564,7 @@
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@links/@children.2"/>
             <bendpoints
-                points="[26, -6, -300, 74]$[26, -84, -300, -4]$[302, -84, -24, -4]" xsi:type="notation:RelativeBendpoints"/>
+                points="[18, -6, -305, 74]$[18, -84, -305, -4]$[299, -84, -24, -4]" xsi:type="notation:RelativeBendpoints"/>
             <sourceAnchor id="(0.34959349593495936,0.13333333333333333)" xsi:type="notation:IdentityAnchor"/>
         </edges>
         <edges
@@ -1618,10 +1618,10 @@
             source="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
             target="//@children.0/@children.4/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.7/@children.0/@children.0/@children.0/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
+                <layoutConstraint x="-28" xsi:type="notation:Location" y="17"/>
             </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <styles lineColor="8421631" xsi:type="notation:ConnectorStyle"/>
+            <styles fontColor="8421631" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@activities.7/@activity/@activities.1/@activity/@activity/@links/@children.1"/>
             <bendpoints
                 points="[-6, 25, -170, -70]$[-6, 104, -170, 9]$[140, 104, -24, 9]" xsi:type="notation:RelativeBendpoints"/>
@@ -1685,7 +1685,7 @@
             <styles fontColor="8388863" fontName="Segoe UI" xsi:type="notation:FontStyle"/>
             <element href="//0/@process/@activity/@activity/@links/@children.6"/>
             <bendpoints
-                points="[0, 198, -588, -336]$[0, 541, -588, 7]$[197, 541, -391, 7]" xsi:type="notation:RelativeBendpoints"/>
+                points="[-4, 235, -584, -285]$[-4, 525, -584, 5]$[189, 525, -391, 5]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
@@ -1860,7 +1860,8 @@
                         variableName="//ch.txg.core.lehf.common.sh//loggerParams" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                 </tibex:extActivity>
             </bpws:extensionActivity>
-            <bpws:scope name="ForEach" tibex:group="foreach" tibex:xpdlId="58eea98d-81d1-4b44-ba1d-ba5b3aa0720f">
+            <bpws:scope name="ForEach" tibex:group="foreach"
+                tibex:indexToGlobal="false" tibex:xpdlId="58eea98d-81d1-4b44-ba1d-ba5b3aa0720f">
                 <bpws:targets>
                     <bpws:target linkName="GetUsersListToForEach_TRAVELPERKvsOKTA"/>
                 </bpws:targets>
@@ -1883,7 +1884,9 @@
                                 <bpws:links>
                                     <bpws:link
                                     name="GroupStartToMapper2" tibex:linkType="SUCCESS"/>
-                                    <bpws:link name="MapperToEmpty2" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                                    <bpws:link
+                                    name="MapperToEmpty2_Theuserseemstonotexist"
+                                    tibex:label="The user seems to not exist" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                     <bpws:link
                                     name="MapperToLog1_samefullName2"
                                     tibex:label="same fullName" tibex:linkType="SUCCESSWITHCONDITION"/>
@@ -1915,7 +1918,7 @@
                                     <bpws:target linkName="GroupStartToMapper2"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="MapperToEmpty2">
+                                    <bpws:source linkName="MapperToEmpty2_Theuserseemstonotexist">
                                     <tibex:DesignExpression>
                                     <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -1956,9 +1959,9 @@
                                     </tibex:config>
                                     </tibex:activityExtension>
                                 </bpws:extensionActivity>
-                                <bpws:empty name="CheckTP" tibex:xpdlId="06d38dbd-328d-45a9-9f1c-3abce1936f9d">
+                                <bpws:empty name="Check_in_TP" tibex:xpdlId="06d38dbd-328d-45a9-9f1c-3abce1936f9d">
                                     <bpws:targets>
-                                    <bpws:target linkName="MapperToEmpty2"/>
+                                    <bpws:target linkName="MapperToEmpty2_Theuserseemstonotexist"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="EmptyToLog1_DifferentlastName2">
@@ -2248,7 +2251,9 @@
                                 <bpws:links>
                                     <bpws:link
                                     name="GroupStartToMapper11" tibex:linkType="SUCCESS"/>
-                                    <bpws:link name="MapperToEmpty11" tibex:linkType="SUCCESSWITHNOCONDITION"/>
+                                    <bpws:link
+                                    name="MapperToEmpty11_Theuserseemstonotexist"
+                                    tibex:label="The user seems to not exist" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                                     <bpws:link
                                     name="MapperToLog1_samefullName11"
                                     tibex:label="same fullName" tibex:linkType="SUCCESSWITHCONDITION"/>
@@ -2279,7 +2284,7 @@
                                     <bpws:target linkName="GroupStartToMapper11"/>
                                     </bpws:targets>
                                     <bpws:sources>
-                                    <bpws:source linkName="MapperToEmpty11">
+                                    <bpws:source linkName="MapperToEmpty11_Theuserseemstonotexist">
                                     <tibex:DesignExpression>
                                     <tibex:expression
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
@@ -2298,7 +2303,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/generalactivities/mapper/1637161955678&quot; xmlns:tns2=&quot;http://ch/txg/hcm/okta/ListGroupMembers&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns3=&quot;http://ch/txg/travelperk/Get_Invoices&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SyncUser_BSL&quot;/>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;GetUsersListTravelPerk&quot;/>&lt;xsl:template name=&quot;Copy_1_Check_firstName_and_lastName-input&quot; match=&quot;/&quot;>&lt;tns4:logid>&lt;xsl:for-each select=&quot;$SyncUser_BSL/tns2:ListGroupMembersElement&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;tns2:profile/tns2:firstName eq $GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;tns2:profile/tns2:firstName eq $GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Both firstName and lastName are the same in Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:when>&lt;xsl:otherwise>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Only firstName is the same in both Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:choose>&lt;xsl:when test=&quot;tns2:profile/tns2:firstName eq $GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Only lastName is the same in both Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:when>&lt;xsl:otherwise>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Neither firstName nor lastName are same in Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:for-each>&lt;/tns4:logid>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/generalactivities/mapper/1637161955678&quot; xmlns:tns2=&quot;http://ch/txg/hcm/okta/ListGroupMembers&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns3=&quot;http://ch/txg/travelperk/Get_Invoices&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SyncUser_BSL&quot;/>&lt;xsl:param name=&quot;TPindexid&quot;/>&lt;xsl:param name=&quot;GetUsersListTravelPerk&quot;/>&lt;xsl:template name=&quot;Check_firstName_and_lastNameOKTA-input&quot; match=&quot;/&quot;>&lt;tns4:logid>&lt;xsl:for-each select=&quot;$SyncUser_BSL/tns2:ListGroupMembersElement&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;tns2:profile/tns2:firstName eq $GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;tns2:profile/tns2:firstName eq $GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Both firstName and lastName are the same in Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:when>&lt;xsl:otherwise>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Only firstName is the same in both Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:choose>&lt;xsl:when test=&quot;tns2:profile/tns2:firstName eq $GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Only lastName is the same in both Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:when>&lt;xsl:otherwise>&lt;lodID>&lt;travelperk_id>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:id&quot;/>&lt;/travelperk_id>&lt;xsl:if test=&quot;not((string(tns2:id/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:id/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:id)&quot;>&lt;okta_id>&lt;xsl:value-of select=&quot;tns2:id&quot;/>&lt;/okta_id>&lt;/xsl:if>&lt;okta_companyCode>&lt;xsl:value-of select=&quot;tns2:profile/tns2:companyCode&quot;/>&lt;/okta_companyCode>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;>&lt;travelperk_firstName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:first_name&quot;/>&lt;/travelperk_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:firstName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:firstName)&quot;>&lt;okta_firstName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:firstName&quot;/>&lt;/okta_firstName>&lt;/xsl:if>&lt;xsl:if test=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;>&lt;travelperk_lastName>&lt;xsl:value-of select=&quot;$GetUsersListTravelPerk/tns3:users[$TPindexid]/tns3:name/tns3:last_name&quot;/>&lt;/travelperk_lastName>&lt;/xsl:if>&lt;xsl:if test=&quot;not((string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;true&amp;quot;)) or (string(tns2:profile/tns2:lastName/@xsi:nil)=(&amp;quot;1&amp;quot;))) and exists(tns2:profile/tns2:lastName)&quot;>&lt;okta_lastName>&lt;xsl:value-of select=&quot;tns2:profile/tns2:lastName&quot;/>&lt;/okta_lastName>&lt;/xsl:if>&lt;ComparisonDetails>&lt;xsl:value-of select=&quot;&amp;quot;Neither firstName nor lastName are same in Okta and travelperk.&amp;quot;&quot;/>&lt;/ComparisonDetails>&lt;/lodID>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:for-each>&lt;/tns4:logid>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -2320,9 +2325,9 @@
                                     </tibex:config>
                                     </tibex:activityExtension>
                                 </bpws:extensionActivity>
-                                <bpws:empty name="CheckOKTA" tibex:xpdlId="1a63016d-039a-4436-a0ba-e80b24e0571c">
+                                <bpws:empty name="Check_in_OKTA" tibex:xpdlId="1a63016d-039a-4436-a0ba-e80b24e0571c">
                                     <bpws:targets>
-                                    <bpws:target linkName="MapperToEmpty11"/>
+                                    <bpws:target linkName="MapperToEmpty11_Theuserseemstonotexist"/>
                                     </bpws:targets>
                                     <bpws:sources>
                                     <bpws:source linkName="EmptyToLog1_DifferentlastName11">

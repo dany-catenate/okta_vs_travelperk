@@ -56,15 +56,6 @@
 			<useLookupValue>false</useLookupValue>
 		</globalVariable>
 		<globalVariable>
-			<name>dataFormatResourceProperty</name>
-			<value></value>
-			<deploymentSettable>false</deploymentSettable>
-			<serviceSettable>false</serviceSettable>
-			<type>String</type>
-			<isOverride>false</isOverride>
-			<useLookupValue>false</useLookupValue>
-		</globalVariable>
-		<globalVariable>
 			<name>/ch.txg.travel.syncUsers.md/Okta/AccessToken/grant_type</name>
 			<value>client_credentials</value>
 			<deploymentSettable>false</deploymentSettable>
